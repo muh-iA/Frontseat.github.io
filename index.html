@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frontseat Tourguide — Maasai Mara Safaris &amp; Kenya Tours</title>
+<meta name="description" content="Frontseat Tourguide: licensed safari and tour operator based in Nairobi, running trips to the Maasai Mara and across Kenya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#0A2E1C;
+    --forest:#0F4C2E;
+    --forest-light:#1E6E46;
+    --gold:#C6982F;
+    --gold-light:#E3B85B;
+    --ivory:#F8F3E7;
+    --ivory-dim:#EFE6D2;
+    --charcoal:#1C1712;
+    --charcoal-soft:#4A4238;
+    --line: rgba(28,23,18,0.14);
+    --line-light: rgba(248,243,231,0.22);
+    --radius: 2px;
+    --max: 1180px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--ivory);
+    color:var(--charcoal);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  img{display:block;max-width:100%;}
+
+  a{color:inherit;text-decoration:none;}
+
+  ul{list-style:none;}
+
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    line-height:1.12;
+  }
+
+  .eyebrow{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+  }
+
+  /* ============ TOPBAR ============ */
+  .topbar{
+    background:var(--forest-deep);
+    color:var(--ivory-dim);
+    font-size:13px;
+  }
+  .topbar .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 32px;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .topbar-contacts{display:flex;gap:22px;flex-wrap:wrap;}
+  .topbar-contacts a{opacity:0.92;transition:opacity .2s;}
+  .topbar-contacts a:hover{opacity:1;color:var(--gold-light);}
+  .topbar-loc{
+    font-family:'Space Grotesk',sans-serif;
+    letter-spacing:0.08em;
+    font-size:11.5px;
+    text-transform:uppercase;
+    opacity:0.85;
+  }
+
+  /* ============ HEADER / NAV ============ */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:var(--forest-deep);
+    border-bottom:1px solid var(--line-light);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:16px;padding-bottom:16px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{width:46px;height:46px;object-fit:cover;border-radius:50%;border:1.5px solid var(--gold);}
+  .brand-text{color:var(--ivory);line-height:1.2;}
+  .brand-text .name{
+    font-family:'Fraunces',serif;font-size:19px;font-weight:600;letter-spacing:0.01em;
+  }
+  .brand-text .sub{
+    font-family:'Space Grotesk',sans-serif;font-size:10.5px;letter-spacing:0.24em;
+    text-transform:uppercase;color:var(--gold-light);
+  }
+
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{
+    color:var(--ivory-dim);
+    font-size:14px;font-weight:500;
+    position:relative;
+    padding:4px 0;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;
+    background:var(--gold);transition:width .25s ease;
+  }
+  .nav-links a:hover{color:var(--ivory);}
+  .nav-links a:hover::after{width:100%;}
+
+  .nav-cta{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--forest-deep);
+    font-weight:600;font-size:13.5px;
+    padding:11px 22px;
+    border-radius:var(--radius);
+    letter-spacing:0.01em;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
+
+  .nav-toggle{display:none;background:none;flex-direction:column;gap:5px;padding:6px;}
+  .nav-toggle span{width:24px;height:2px;background:var(--ivory);display:block;}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--forest-deep) 0%, var(--forest) 62%, var(--forest-light) 100%);
+    color:var(--ivory);
+    overflow:hidden;
+    padding-top:96px;
+  }
+  .hero-inner{
+    max-width:var(--max);margin:0 auto;padding:64px 32px 0;
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;
+  }
+  .hero-eyebrow{color:var(--gold-light);margin-bottom:18px;display:flex;align-items:center;gap:12px;}
+  .hero-eyebrow .dash{width:34px;height:1px;background:var(--gold-light);display:inline-block;}
+  .hero h1{
+    font-size:clamp(38px,5.4vw,64px);
+    color:var(--ivory);
+  }
+  .hero h1 em{
+    font-style:italic;color:var(--gold-light);font-weight:500;
+  }
+  .hero p.lede{
+    margin-top:22px;max-width:480px;
+    font-size:17px;line-height:1.7;color:var(--ivory-dim);
+  }
+  .hero-actions{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--gold);color:var(--forest-deep);
+    padding:15px 28px;border-radius:var(--radius);
+    font-weight:600;font-size:14.5px;
+    transition:background .2s ease, transform .2s ease;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line-light);color:var(--ivory);
+    padding:15px 28px;border-radius:var(--radius);
+    font-weight:600;font-size:14.5px;
+    transition:border-color .2s ease, background .2s ease;
+    display:inline-block;
+  }
+  .btn-ghost:hover{border-color:var(--gold-light);background:rgba(255,255,255,0.05);}
+
+  .hero-stats{
+    display:flex;gap:0;margin-top:56px;
+    border-top:1px solid var(--line-light);
+    padding-top:26px;max-width:520px;
+  }
+  .hero-stats .stat{flex:1;padding-right:20px;}
+  .hero-stats .stat .num{
+    font-family:'Fraunces',serif;font-size:28px;color:var(--gold-light);font-weight:600;
+  }
+  .hero-stats .stat .lbl{
+    font-family:'Space Grotesk',sans-serif;font-size:10.5px;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--ivory-dim);margin-top:4px;
+  }
+
+  .hero-visual{position:relative;}
+  .hero-frame{
+    aspect-ratio:4/5;border:1px solid var(--line-light);
+    padding:14px;position:relative;
+  }
+  .hero-frame img{width:100%;height:100%;object-fit:cover;filter:saturate(0.9);}
+  .hero-frame .tag{
+    position:absolute;bottom:-16px;left:34px;
+    background:var(--gold);color:var(--forest-deep);
+    font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:0.12em;text-transform:uppercase;
+    padding:9px 16px;
+  }
+
+  .horizon{
+    position:relative;height:64px;margin-top:20px;
+  }
+  .horizon svg{width:100%;height:100%;display:block;}
+
+  /* ============ TRAIL DIVIDER (signature) ============ */
+  .trail{
+    display:flex;align-items:center;gap:14px;
+    max-width:var(--max);margin:0 auto;padding:0 32px;
+  }
+  .trail .line{flex:1;height:1px;background-image:linear-gradient(to right, var(--line) 50%, transparent 0%);background-size:10px 1px;background-repeat:repeat-x;}
+  .trail .node{
+    width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;
+  }
+  .trail .waypoint-label{
+    font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--charcoal-soft);white-space:nowrap;
+  }
+
+  section{padding:96px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head .eyebrow{color:var(--forest);margin-bottom:14px;display:block;}
+  .section-head h2{font-size:clamp(28px,3.6vw,42px);color:var(--charcoal);}
+  .section-head p{margin-top:16px;font-size:16px;line-height:1.7;color:var(--charcoal-soft);}
+
+  /* ============ WHY TRAVEL WITH US ============ */
+  .why{background:var(--ivory);}
+  .why-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .why-card{background:var(--ivory);padding:36px 30px;}
+  .why-card .icon{
+    width:44px;height:44px;margin-bottom:22px;
+    color:var(--forest);
+  }
+  .why-card .icon svg{width:100%;height:100%;}
+  .why-card h3{font-size:18px;color:var(--charcoal);margin-bottom:10px;font-weight:600;}
+  .why-card p{font-size:14.5px;line-height:1.65;color:var(--charcoal-soft);}
+
+  /* ============ TRIP TYPES ============ */
+  .trip-types{background:var(--forest-deep);color:var(--ivory);}
+  .trip-types .section-head .eyebrow{color:var(--gold-light);}
+  .trip-types .section-head h2{color:var(--ivory);}
+  .trip-types .section-head p{color:var(--ivory-dim);}
+  .types-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:26px;
+  }
+  .type-card{
+    border:1px solid var(--line-light);
+    overflow:hidden;
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .type-card:hover{border-color:var(--gold);transform:translateY(-4px);}
+  .type-img{aspect-ratio:16/10;overflow:hidden;background:var(--forest);}
+  .type-img img{width:100%;height:100%;object-fit:cover;opacity:0.88;}
+  .type-body{padding:22px 24px 26px;}
+  .type-body .num{
+    font-family:'Space Grotesk',sans-serif;font-size:11px;color:var(--gold-light);
+    letter-spacing:0.14em;
+  }
+  .type-body h3{font-size:19px;margin-top:10px;color:var(--ivory);font-weight:600;}
+  .type-body p{font-size:14px;line-height:1.6;color:var(--ivory-dim);margin-top:8px;}
+
+  /* ============ PACKAGES ============ */
+  .packages{background:var(--ivory);}
+  .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .pkg-card{
+    background:#fff;
+    border:1px solid var(--line);
+    display:flex;flex-direction:column;
+    transition:box-shadow .25s ease, transform .25s ease;
+  }
+  .pkg-card:hover{box-shadow:0 18px 40px rgba(10,46,28,0.12);transform:translateY(-4px);}
+  .pkg-img{aspect-ratio:16/11;position:relative;overflow:hidden;}
+  .pkg-img img{width:100%;height:100%;object-fit:cover;}
+  .pkg-badge{
+    position:absolute;top:16px;left:16px;
+    background:var(--gold);color:var(--forest-deep);
+    font-family:'Space Grotesk',sans-serif;font-size:10.5px;font-weight:700;
+    letter-spacing:0.1em;text-transform:uppercase;
+    padding:6px 12px;
+  }
+  .pkg-body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1;}
+  .pkg-meta{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--charcoal-soft);margin-bottom:12px;
+  }
+  .pkg-body h3{font-size:21px;color:var(--charcoal);margin-bottom:12px;}
+  .pkg-list{margin-bottom:20px;}
+  .pkg-list li{
+    font-size:13.5px;color:var(--charcoal-soft);padding-left:16px;position:relative;
+    margin-bottom:7px;line-height:1.5;
+  }
+  .pkg-list li::before{
+    content:"";position:absolute;left:0;top:7px;width:6px;height:1px;background:var(--gold);
+  }
+  .pkg-footer{
+    margin-top:auto;display:flex;justify-content:space-between;align-items:center;
+    padding-top:18px;border-top:1px solid var(--line);
+  }
+  .pkg-price{font-family:'Fraunces',serif;font-size:20px;color:var(--forest);font-weight:600;}
+  .pkg-price span{font-family:'Inter',sans-serif;font-size:12px;color:var(--charcoal-soft);font-weight:400;display:block;}
+  .pkg-btn{
+    font-size:13px;font-weight:600;color:var(--forest);
+    border-bottom:1px solid var(--forest);padding-bottom:2px;
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .pkg-btn:hover{color:var(--gold);border-color:var(--gold);}
+
+  /* ============ ACTIVITIES ============ */
+  .activities{background:var(--ivory-dim);}
+  .act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
+  .act-card{
+    background:var(--ivory-dim);padding:30px 28px;
+    display:flex;gap:18px;align-items:flex-start;
+    transition:background .2s ease;
+  }
+  .act-card:hover{background:#fff;}
+  .act-icon{width:38px;height:38px;flex-shrink:0;color:var(--gold);}
+  .act-icon svg{width:100%;height:100%;}
+  .act-text h3{font-size:16.5px;color:var(--charcoal);margin-bottom:6px;font-weight:600;}
+  .act-text p{font-size:13.5px;line-height:1.6;color:var(--charcoal-soft);}
+
+  /* ============ ALL TRIPS ============ */
+  .all-trips{background:var(--forest-deep);color:var(--ivory);}
+  .all-trips .section-head .eyebrow{color:var(--gold-light);}
+  .all-trips .section-head h2{color:var(--ivory);}
+  .all-trips .section-head p{color:var(--ivory-dim);}
+  .trips-table{width:100%;border-collapse:collapse;}
+  .trips-table thead th{
+    text-align:left;font-family:'Space Grotesk',sans-serif;font-size:11px;
+    letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);
+    padding:14px 18px;border-bottom:1px solid var(--line-light);font-weight:600;
+  }
+  .trips-table tbody td{
+    padding:20px 18px;border-bottom:1px solid var(--line-light);
+    font-size:14.5px;vertical-align:middle;
+  }
+  .trip-name-cell{display:flex;align-items:center;gap:16px;}
+  .trip-name-cell img{width:64px;height:48px;object-fit:cover;border:1px solid var(--line-light);flex-shrink:0;}
+  .trip-name-cell .tn{font-family:'Fraunces',serif;font-size:16px;color:var(--ivory);font-weight:600;}
+  .trip-name-cell .tt{font-size:12px;color:var(--ivory-dim);margin-top:2px;}
+  .tag-pill{
+    font-family:'Space Grotesk',sans-serif;font-size:10.5px;letter-spacing:0.08em;
+    text-transform:uppercase;border:1px solid var(--line-light);color:var(--ivory-dim);
+    padding:5px 10px;display:inline-block;
+  }
+  .trips-table .price-cell{font-family:'Fraunces',serif;color:var(--gold-light);font-weight:600;}
+  .trip-link{font-size:13px;font-weight:600;color:var(--gold-light);border-bottom:1px solid var(--gold-light);padding-bottom:2px;white-space:nowrap;}
+  .trip-link:hover{color:var(--ivory);border-color:var(--ivory);}
+
+  /* ============ BOOKING FORM ============ */
+  .booking{background:var(--ivory);}
+  .booking-grid{
+    display:grid;grid-template-columns:0.85fr 1.15fr;gap:0;
+    border:1px solid var(--line);
+  }
+  .booking-info{
+    background:var(--forest);color:var(--ivory);
+    padding:56px 44px;
+  }
+  .booking-info .eyebrow{color:var(--gold-light);margin-bottom:16px;display:block;}
+  .booking-info h2{font-size:30px;color:var(--ivory);margin-bottom:18px;}
+  .booking-info p{font-size:15px;line-height:1.7;color:var(--ivory-dim);margin-bottom:32px;}
+  .booking-contact-list{display:flex;flex-direction:column;gap:18px;}
+  .booking-contact-list li{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;}
+  .booking-contact-list .ic{width:20px;height:20px;flex-shrink:0;margin-top:2px;color:var(--gold-light);}
+  .booking-contact-list .ic svg{width:100%;height:100%;}
+  .booking-contact-list .lbl{
+    font-family:'Space Grotesk',sans-serif;font-size:10.5px;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:3px;
+  }
+
+  .booking-form{background:#fff;padding:56px 48px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+  .field{display:flex;flex-direction:column;}
+  .field.full{grid-column:1/-1;}
+  .field label{
+    font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--charcoal-soft);margin-bottom:8px;
+  }
+  .field input, .field select, .field textarea{
+    border:1px solid var(--line);background:var(--ivory);
+    padding:13px 14px;font-family:'Inter',sans-serif;font-size:14.5px;color:var(--charcoal);
+    border-radius:var(--radius);
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;border-color:var(--forest);background:#fff;
+  }
+  .field textarea{resize:vertical;min-height:96px;}
+  .form-submit{
+    margin-top:8px;width:100%;
+    background:var(--forest);color:var(--ivory);
+    padding:16px;font-weight:600;font-size:14.5px;
+    letter-spacing:0.02em;border-radius:var(--radius);
+    transition:background .2s ease;
+  }
+  .form-submit:hover{background:var(--forest-deep);}
+  .form-note{font-size:12.5px;color:var(--charcoal-soft);margin-top:14px;text-align:center;}
+  .form-success{
+    display:none;margin-top:18px;padding:14px 16px;
+    background:var(--ivory-dim);border-left:3px solid var(--forest);
+    font-size:13.5px;color:var(--charcoal);
+  }
+  .form-success.show{display:block;}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--forest-deep);color:var(--ivory-dim);padding-top:72px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:40px;
+    padding-bottom:56px;border-bottom:1px solid var(--line-light);
+  }
+  .footer-brand .brand{margin-bottom:18px;}
+  .footer-brand p{font-size:14px;line-height:1.7;max-width:280px;color:var(--ivory-dim);}
+  .footer-col h4{
+    font-family:'Space Grotesk',sans-serif;font-size:11.5px;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--gold-light);margin-bottom:20px;font-weight:600;
+  }
+  .footer-col ul li{margin-bottom:12px;}
+  .footer-col ul li a{font-size:14px;color:var(--ivory-dim);transition:color .2s ease;}
+  .footer-col ul li a:hover{color:var(--gold-light);}
+  .footer-social{display:flex;gap:12px;margin-top:20px;}
+  .footer-social a{
+    width:36px;height:36px;border:1px solid var(--line-light);
+    display:flex;align-items:center;justify-content:center;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .footer-social a:hover{border-color:var(--gold-light);background:rgba(255,255,255,0.05);}
+  .footer-social svg{width:16px;height:16px;}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:26px 0;font-size:12.5px;color:var(--ivory-dim);flex-wrap:wrap;gap:10px;
+  }
+  .footer-bottom .fine{opacity:0.75;}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:980px){
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-visual{max-width:420px;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .types-grid{grid-template-columns:repeat(2,1fr);}
+    .pkg-grid{grid-template-columns:repeat(2,1fr);}
+    .act-grid{grid-template-columns:repeat(2,1fr);}
+    .booking-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+
+  @media (max-width:760px){
+    .wrap{padding:0 20px;}
+    .topbar .wrap{padding:9px 20px;justify-content:center;text-align:center;}
+    .topbar-loc{display:none;}
+    .nav-links{
+      position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;
+      background:var(--forest-deep);flex-direction:column;align-items:flex-start;
+      padding:100px 32px 32px;gap:28px;
+      transform:translateX(100%);transition:transform .3s ease;
+      border-left:1px solid var(--line-light);
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a{font-size:17px;}
+    .nav-cta{margin-top:8px;}
+    .nav-toggle{display:flex;}
+    section{padding:64px 0;}
+    .hero-inner{padding:44px 20px 0;}
+    .hero-stats{flex-wrap:wrap;gap:20px;}
+    .hero-stats .stat{flex:1 1 40%;}
+    .why-grid{grid-template-columns:1fr;}
+    .types-grid{grid-template-columns:1fr;}
+    .pkg-grid{grid-template-columns:1fr;}
+    .act-grid{grid-template-columns:1fr;}
+    .booking-info{padding:40px 26px;}
+    .booking-form{padding:40px 26px;}
+    .form-row{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:36px;}
+    .trail .waypoint-label{display:none;}
+    .trips-table{display:block;}
+    .trips-table thead{display:none;}
+    .trips-table tbody tr{
+      display:block;border-bottom:1px solid var(--line-light);padding:18px 0;
+    }
+    .trips-table tbody td{display:block;border:none;padding:6px 0;}
+    .trip-name-cell{margin-bottom:8px;}
+    .trips-table td[data-label]::before{
+      content:attr(data-label);
+      font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:0.1em;
+      text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:3px;
+    }
+  }
+
+  @media (max-width:500px){
+    .hero h1{font-size:34px;}
+    .booking-contact-list{gap:14px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a href="#top" class="brand">
+      <img src="images/logo.png" alt="Frontseat Tourguide logo">
+      <div class="brand-text">
+        <div class="name">Frontseat Tourguide</div>
+        <div class="sub">Maasai Mara &amp; Kenya Safaris</div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#trip-types">Trip Types</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#all-trips">All Trips</a></li>
+      <li><a href="#book" class="nav-cta">Book a Trip</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" style="padding-top:0;">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">
+          <span class="dash"></span>
+          <span class="eyebrow">Nairobi &mdash; Maasai Mara &amp; Beyond</span>
+        </div>
+        <h1>Ride up front. <em>See Kenya</em> the way it's meant to be seen.</h1>
+        <p class="lede">Frontseat Tourguide plans and leads safaris into the Maasai Mara and across Kenya, with a Nairobi operations team handling every detail before you set off.</p>
+        <div class="hero-actions">
+          <a href="#book" class="btn-primary">Book Your Safari</a>
+          <a href="#packages" class="btn-ghost">View Packages</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="num">12+</div>
+            <div class="lbl">Trip Types</div>
+          </div>
+          <div class="stat">
+            <div class="num">Nairobi</div>
+            <div class="lbl">Operations Base</div>
+          </div>
+          <div class="stat">
+            <div class="num">Mara</div>
+            <div class="lbl">Home Ground</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-frame">
+          <img src="images/logo.png" alt="Maasai Mara safari scene">
+          <span class="tag">Maasai Mara Game Reserve</span>
+        </div>
+      </div>
+    </div>
+    <div class="horizon">
+      <svg viewBox="0 0 1180 64" preserveAspectRatio="none">
+        <path d="M0,64 L0,40 Q120,10 260,34 T520,30 T780,42 T1040,20 L1180,34 L1180,64 Z" fill="var(--ivory)"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ WHY TRAVEL WITH US ============ -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Why Travel With Us</span>
+        <h2>Local knowledge, run like a proper operation.</h2>
+        <p>Every trip is planned from our Nairobi office and led on the ground in the Mara, so you get careful logistics and a guide who actually knows the terrain.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="24" cy="24" r="19"/><path d="M24 14v10l7 4"/></svg>
+          </div>
+          <h3>Local Expert Guides</h3>
+          <p>Guides who know the Mara's terrain, wildlife movement, and the Maasai communities that call it home.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="20" width="28" height="12" rx="2"/><path d="M34 24h6l4 6v4h-4"/><circle cx="15" cy="36" r="3"/><circle cx="33" cy="36" r="3"/></svg>
+          </div>
+          <h3>Nairobi &ndash; Mara Logistics</h3>
+          <p>Pick-up, transfers, and permits coordinated from our Nairobi operations desk from start to finish.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 6l16 6v10c0 10-7 17-16 20-9-3-16-10-16-20V12z"/></svg>
+          </div>
+          <h3>Trusted &amp; Reliable</h3>
+          <p>Straightforward pricing, clear itineraries, and a team that answers the phone when you call.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 40l10-26 6 14 6-10 10 22z"/></svg>
+          </div>
+          <h3>Trips Built Around You</h3>
+          <p>From honeymoon getaways to corporate retreats, every itinerary is shaped around what you want to see.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trail">
+    <span class="node"></span>
+    <span class="line"></span>
+    <span class="waypoint-label">Choose Your Route</span>
+    <span class="line"></span>
+    <span class="node"></span>
+  </div>
+
+  <!-- ============ TRIP TYPES ============ -->
+  <section class="trip-types" id="trip-types">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Trip Types</span>
+        <h2>Whatever brings you to Kenya, there's a route for it.</h2>
+        <p>Six ways to travel with us, each built around a different pace and purpose.</p>
+      </div>
+      <div class="types-grid">
+        <div class="type-card">
+          <div class="type-img"><img src="images/logo.png" alt="Wildlife safari trip"></div>
+          <div class="type-body">
+            <span class="num">01</span>
+            <h3>Wildlife Safaris</h3>
+            <p>Classic game drives through the Maasai Mara in search of the big cats and the wider plains game.</p>
+          </div>
+        </div>
+        <div class="type-card">
+          <div class="type-img"><img src="images/logo.png" alt="Great Migration trip"></div>
+          <div class="type-body">
+            <span class="num">02</span>
+            <h3>Great Migration</h3>
+            <p>Seasonal trips timed to the wildebeest crossings between the Mara and the Serengeti.</p>
+          </div>
+        </div>
+        <div class="type-card">
+          <div class="type-img"><img src="images/logo.png" alt="Cultural Maasai experience"></div>
+          <div class="type-body">
+            <span class="num">03</span>
+            <h3>Cultural Maasai Experience</h3>
+            <p>Guided visits to Maasai homesteads and villages bordering the reserve.</p>
+          </div>
+        </div>
+        <div class="type-card">
+          <div class="type-img"><img src="images/logo.png" alt="Honeymoon safari getaway"></div>
+          <div class="type-body">
+            <span class="num">04</span>
+            <h3>Honeymoon Getaways</h3>
+            <p>Slower-paced private trips built for couples, from camp choice to sundowner spots.</p>
+          </div>
+        </div>
+        <div class="type-card">
+          <div class="type-img"><img src="images/logo.png" alt="Group and corporate trips"></div>
+          <div class="type-body">
+            <span class="num">05</span>
+            <h3>Group &amp; Corporate Trips</h3>
+            <p>Team retreats and group travel organised end to end, from Nairobi pick-up to Mara camp.</p>
+          </div>
+        </div>
+        <div class="type-card">
+          <div class="type-img"><img src="images/logo.png" alt="Nairobi day trips"></div>
+          <div class="type-body">
+            <span class="num">06</span>
+            <h3>Day Trips &amp; Short Escapes</h3>
+            <p>Shorter trips out of Nairobi for travellers working with limited time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOP PACKAGES ============ -->
+  <section class="packages" id="packages">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Top Packages</span>
+        <h2>Our most booked itineraries.</h2>
+        <p>Set departures and pricing on our best-loved routes. Every package can also be adjusted to fit your dates.</p>
+      </div>
+      <div class="pkg-grid">
+        <div class="pkg-card">
+          <div class="pkg-img">
+            <img src="images/logo.png" alt="Classic Maasai Mara safari package">
+            <span class="pkg-badge">Most Booked</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span>3 Days / 2 Nights</span><span>2&ndash;6 Guests</span></div>
+            <h3>Classic Maasai Mara Safari</h3>
+            <ul class="pkg-list">
+              <li>Return transport from Nairobi</li>
+              <li>Two full-day game drives</li>
+              <li>Park entry fees included</li>
+              <li>Camp accommodation &amp; meals</li>
+            </ul>
+            <div class="pkg-footer">
+              <div class="pkg-price">KES 32,000<span>per person</span></div>
+              <a href="#book" class="pkg-btn">Book This Trip</a>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-card">
+          <div class="pkg-img">
+            <img src="images/logo.png" alt="Great Migration safari package">
+            <span class="pkg-badge">Seasonal</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span>4 Days / 3 Nights</span><span>2&ndash;6 Guests</span></div>
+            <h3>Great Migration Safari</h3>
+            <ul class="pkg-list">
+              <li>Timed to the river crossings</li>
+              <li>Private 4x4 with pop-up roof</li>
+              <li>Riverside picnic lunch</li>
+              <li>Full-board camp stay</li>
+            </ul>
+            <div class="pkg-footer">
+              <div class="pkg-price">KES 54,500<span>per person</span></div>
+              <a href="#book" class="pkg-btn">Book This Trip</a>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-card">
+          <div class="pkg-img">
+            <img src="images/logo.png" alt="Weekend Nairobi to Mara package">
+            <span class="pkg-badge">Short Escape</span>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span>2 Days / 1 Night</span><span>1&ndash;4 Guests</span></div>
+            <h3>Weekend Mara Escape</h3>
+            <ul class="pkg-list">
+              <li>Friday evening departure</li>
+              <li>One sunrise game drive</li>
+              <li>Sundowner at camp</li>
+              <li>Return by Sunday afternoon</li>
+            </ul>
+            <div class="pkg-footer">
+              <div class="pkg-price">KES 21,000<span>per person</span></div>
+              <a href="#book" class="pkg-btn">Book This Trip</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOP ACTIVITIES ============ -->
+  <section class="activities" id="activities">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Top Activities</span>
+        <h2>What you'll actually be doing out there.</h2>
+        <p>Add any of these to a package, or build a custom day around them.</p>
+      </div>
+      <div class="act-grid">
+        <div class="act-card">
+          <div class="act-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="20" width="30" height="12" rx="2"/><path d="M34 24h6l4 6v4h-4"/><circle cx="14" cy="36" r="3"/><circle cx="30" cy="36" r="3"/></svg></div>
+          <div class="act-text">
+            <h3>Game Drives</h3>
+            <p>Morning and evening drives across the plains, tracking lion, elephant, and cheetah.</p>
+          </div>
+        </div>
+        <div class="act-card">
+          <div class="act-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="24" cy="16" rx="14" ry="10"/><path d="M24 26v18M17 44h14"/></svg></div>
+          <div class="act-text">
+            <h3>Hot Air Balloon Safari</h3>
+            <p>Sunrise flights over the Mara, followed by a bush breakfast on landing.</p>
+          </div>
+        </div>
+        <div class="act-card">
+          <div class="act-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 6l16 8v10c0 10-7 17-16 18-9-1-16-8-16-18V14z"/><circle cx="24" cy="22" r="4"/></svg></div>
+          <div class="act-text">
+            <h3>Maasai Village Visit</h3>
+            <p>A guided walk through a local homestead to learn Maasai customs and daily life.</p>
+          </div>
+        </div>
+        <div class="act-card">
+          <div class="act-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 30c6-14 30-14 36 0" /><path d="M18 30v6M30 30v6M12 36h24"/></svg></div>
+          <div class="act-text">
+            <h3>Guided Nature Walks</h3>
+            <p>Slower walking trips through the bush with a guide reading tracks and plant life.</p>
+          </div>
+        </div>
+        <div class="act-card">
+          <div class="act-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 30c4-10 14-16 22-14-2 8-10 16-22 14z"/><path d="M18 30l16-16"/></svg></div>
+          <div class="act-text">
+            <h3>Bird Watching</h3>
+            <p>Guided outings for the Mara's resident and migratory bird species.</p>
+          </div>
+        </div>
+        <div class="act-card">
+          <div class="act-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="24" cy="30" r="9"/><path d="M4 30h4M40 30h4M24 6v4M10 16l3 3M38 16l-3 3"/></svg></div>
+          <div class="act-text">
+            <h3>Sundowner Experience</h3>
+            <p>An evening stop overlooking the reserve as the light drops over the plains.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ALL TRIPS ============ -->
+  <section class="all-trips" id="all-trips">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">All Trips</span>
+        <h2>The full list of routes we run.</h2>
+        <p>Every trip we currently offer, in one place. Get in touch if you don't see what you're after &mdash; most itineraries can be built to order.</p>
+      </div>
+      <table class="trips-table">
+        <thead>
+          <tr>
+            <th>Trip</th>
+            <th>Type</th>
+            <th>Duration</th>
+            <th>From</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Trip">
+              <div class="trip-name-cell">
+                <img src="images/logo.png" alt="Classic Maasai Mara safari">
+                <div><div class="tn">Classic Maasai Mara Safari</div><div class="tt">Nairobi &ndash; Mara &ndash; Nairobi</div></div>
+              </div>
+            </td>
+            <td data-label="Type"><span class="tag-pill">Wildlife Safari</span></td>
+            <td data-label="Duration">3 Days / 2 Nights</td>
+            <td data-label="From" class="price-cell">KES 32,000</td>
+            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+          </tr>
+          <tr>
+            <td data-label="Trip">
+              <div class="trip-name-cell">
+                <img src="images/logo.png" alt="Great Migration safari">
+                <div><div class="tn">Great Migration Safari</div><div class="tt">Mara River Crossings</div></div>
+              </div>
+            </td>
+            <td data-label="Type"><span class="tag-pill">Great Migration</span></td>
+            <td data-label="Duration">4 Days / 3 Nights</td>
+            <td data-label="From" class="price-cell">KES 54,500</td>
+            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+          </tr>
+          <tr>
+            <td data-label="Trip">
+              <div class="trip-name-cell">
+                <img src="images/logo.png" alt="Weekend Mara escape">
+                <div><div class="tn">Weekend Mara Escape</div><div class="tt">Nairobi &ndash; Mara &ndash; Nairobi</div></div>
+              </div>
+            </td>
+            <td data-label="Type"><span class="tag-pill">Short Escape</span></td>
+            <td data-label="Duration">2 Days / 1 Night</td>
+            <td data-label="From" class="price-cell">KES 21,000</td>
+            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+          </tr>
+          <tr>
+            <td data-label="Trip">
+              <div class="trip-name-cell">
+                <img src="images/logo.png" alt="Honeymoon Mara getaway">
+                <div><div class="tn">Honeymoon Mara Getaway</div><div class="tt">Private Camp Stay</div></div>
+              </div>
+            </td>
+            <td data-label="Type"><span class="tag-pill">Honeymoon</span></td>
+            <td data-label="Duration">4 Days / 3 Nights</td>
+            <td data-label="From" class="price-cell">KES 68,000</td>
+            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+          </tr>
+          <tr>
+            <td data-label="Trip">
+              <div class="trip-name-cell">
+                <img src="images/logo.png" alt="Maasai cultural immersion trip">
+                <div><div class="tn">Maasai Cultural Immersion</div><div class="tt">Village Stay &amp; Workshops</div></div>
+              </div>
+            </td>
+            <td data-label="Type"><span class="tag-pill">Cultural</span></td>
+            <td data-label="Duration">3 Days / 2 Nights</td>
+            <td data-label="From" class="price-cell">KES 29,500</td>
+            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+          </tr>
+          <tr>
+            <td data-label="Trip">
+              <div class="trip-name-cell">
+                <img src="images/logo.png" alt="Corporate group retreat">
+                <div><div class="tn">Corporate Group Retreat</div><div class="tt">Custom Group Itinerary</div></div>
+              </div>
+            </td>
+            <td data-label="Type"><span class="tag-pill">Group &amp; Corporate</span></td>
+            <td data-label="Duration">3&ndash;5 Days</td>
+            <td data-label="From" class="price-cell">On Request</td>
+            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+          </tr>
+          <tr>
+            <td data-label="Trip">
+              <div class="trip-name-cell">
+                <img src="images/logo.png" alt="Nairobi day trip to Mara">
+                <div><div class="tn">Nairobi Day Trip to the Mara</div><div class="tt">Single-Day Flying Visit</div></div>
+              </div>
+            </td>
+            <td data-label="Type"><span class="tag-pill">Day Trip</span></td>
+            <td data-label="Duration">1 Day</td>
+            <td data-label="From" class="price-cell">KES 18,500</td>
+            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+          </tr>
+          <tr>
+            <td data-label="Trip">
+              <div class="trip-name-cell">
+                <img src="images/logo.png" alt="Balloon safari and breakfast add-on">
+                <div><div class="tn">Balloon Safari &amp; Bush Breakfast</div><div class="tt">Add-on to any package</div></div>
+              </div>
+            </td>
+            <td data-label="Type"><span class="tag-pill">Activity Add-on</span></td>
+            <td data-label="Duration">Half Day</td>
+            <td data-label="From" class="price-cell">KES 45,000</td>
+            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ BOOKING FORM ============ -->
+  <section class="booking" id="book">
+    <div class="wrap">
+      <div class="booking-grid">
+        <div class="booking-info">
+          <span class="eyebrow">Book a Trip</span>
+          <h2>Tell us where you'd like to go.</h2>
+          <p>Send us your travel dates and the trip that interests you. Our Nairobi operations team will respond with availability and a full itinerary.</p>
+          <ul class="booking-contact-list">
+            <li>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0 8 7 15 15 15l3-4-6-3-2 2c-3-1.5-5.5-4-7-7l2-2-3-6z"/></svg></span>
+              <div><span class="lbl">Call Us</span>0715 240331 &middot; 0759 701496</div>
+            </li>
+            <li>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M4 6l8 7 8-7"/></svg></span>
+              <div><span class="lbl">Email Us</span>olesimitia17@gmail.com</div>
+            </li>
+            <li>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-7.5 7-13a7 7 0 10-14 0c0 5.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.4"/></svg></span>
+              <div><span class="lbl">Operations Office</span>Nairobi, Kenya</div>
+            </li>
+            <li>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span>
+              <div><span class="lbl">Home Ground</span>Maasai Mara Game Reserve</div>
+            </li>
+          </ul>
+        </div>
+        <div class="booking-form">
+          <form id="bookingForm">
+            <div class="form-row">
+              <div class="field">
+                <label for="fname">Full Name</label>
+                <input type="text" id="fname" name="fname" placeholder="Your full name" required>
+              </div>
+              <div class="field">
+                <label for="fphone">Phone Number</label>
+                <input type="tel" id="fphone" name="fphone" placeholder="07XX XXX XXX" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="femail">Email Address</label>
+                <input type="email" id="femail" name="femail" placeholder="you@email.com" required>
+              </div>
+              <div class="field">
+                <label for="ftrip">Trip Type</label>
+                <select id="ftrip" name="ftrip" required>
+                  <option value="" disabled selected>Select a trip type</option>
+                  <option>Wildlife Safari</option>
+                  <option>Great Migration</option>
+                  <option>Cultural Maasai Experience</option>
+                  <option>Honeymoon Getaway</option>
+                  <option>Group &amp; Corporate Trip</option>
+                  <option>Day Trip</option>
+                  <option>Not Sure Yet</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="fdate">Preferred Date</label>
+                <input type="date" id="fdate" name="fdate" required>
+              </div>
+              <div class="field">
+                <label for="fguests">Number of Travellers</label>
+                <input type="number" id="fguests" name="fguests" min="1" placeholder="e.g. 2" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field full">
+                <label for="fmessage">Additional Details</label>
+                <textarea id="fmessage" name="fmessage" placeholder="Tell us anything else about your trip"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="form-submit">Send Booking Request</button>
+            <p class="form-note">We typically respond within one business day.</p>
+            <div class="form-success" id="formSuccess">Thank you. Your request has been noted &mdash; our team will contact you shortly on the details provided.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <img src="images/logo.png" alt="Frontseat Tourguide logo">
+          <div class="brand-text">
+            <div class="name">Frontseat Tourguide</div>
+            <div class="sub">Maasai Mara &amp; Kenya Safaris</div>
+          </div>
+        </div>
+        <p>A Nairobi-run safari and tour operator based in and around the Maasai Mara Game Reserve.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 8h-2a2 2 0 00-2 2v3H9v3h2v6h3v-6h2.2l.8-3H14v-2a1 1 0 011-1h2z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.4"/><circle cx="16.6" cy="7.4" r="0.6" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-4A8 8 0 1112 20a8 8 0 01-4-1z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#trip-types">Trip Types</a></li>
+          <li><a href="#packages">Top Packages</a></li>
+          <li><a href="#activities">Top Activities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Trips</h4>
+        <ul>
+          <li><a href="#all-trips">All Trips</a></li>
+          <li><a href="#book">Book a Trip</a></li>
+          <li><a href="#trip-types">Wildlife Safaris</a></li>
+          <li><a href="#trip-types">Group &amp; Corporate</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0715240331">0715 240331</a></li>
+          <li><a href="tel:0759701496">0759 701496</a></li>
+          <li><a href="mailto:olesimitia17@gmail.com">olesimitia17@gmail.com</a></li>
+          <li>Operations: Nairobi, Kenya</li>
+          <li>Base Camp: Maasai Mara Game Reserve</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Frontseat Tourguide. All rights reserved.</span>
+      <span class="fine">Licensed tour operator &middot; Nairobi, Kenya</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  const bookingForm = document.getElementById('bookingForm');
+  const formSuccess = document.getElementById('formSuccess');
+  bookingForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    formSuccess.classList.add('show');
+    bookingForm.reset();
+  });
+</script>
+
+</body>
+</html>
