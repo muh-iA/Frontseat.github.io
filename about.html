@@ -61,7 +61,39 @@
   .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
   .nav-toggle{display:none;background:none;flex-direction:column;gap:5px;padding:6px;}
   .nav-toggle span{width:24px;height:2px;background:var(--ivory);display:block;}
+.nav-toggle{
+  display:none;
+  background:none;
+  border:none;
+  flex-direction:column;
+  gap:5px;
+  padding:6px;
+  position:relative;
+  width:24px;
+  height:24px;
+  justify-content:center;
+}
 
+.nav-toggle span{
+  width:24px;
+  height:2px;
+  background:var(--ivory);
+  display:block;
+  transition:.3s ease;
+}
+
+/* X when menu is open */
+.nav-toggle.open span:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2){
+  opacity:0;
+}
+
+.nav-toggle.open span:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
+}
   /* Page hero (inner pages) */
   .page-hero{
     background:linear-gradient(180deg, var(--forest-deep) 0%, var(--forest) 100%);

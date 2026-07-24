@@ -138,7 +138,39 @@
 
   .nav-toggle{display:none;background:none;flex-direction:column;gap:5px;padding:6px;}
   .nav-toggle span{width:24px;height:2px;background:var(--ivory);display:block;}
+.nav-toggle{
+  display:none;
+  background:none;
+  border:none;
+  flex-direction:column;
+  gap:5px;
+  padding:6px;
+  position:relative;
+  width:24px;
+  height:24px;
+  justify-content:center;
+}
 
+.nav-toggle span{
+  width:24px;
+  height:2px;
+  background:var(--ivory);
+  display:block;
+  transition:.3s ease;
+}
+
+/* X when menu is open */
+.nav-toggle.open span:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2){
+  opacity:0;
+}
+
+.nav-toggle.open span:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
+}
   /* ============ HERO ============ */
   .hero{
     position:relative;
@@ -716,7 +748,6 @@
               <li>Camp accommodation &amp; meals</li>
             </ul>
             <div class="pkg-footer">
-              <div class="pkg-price">KES 32,000<span>per person</span></div>
               <a href="booking.html" class="pkg-btn">Book This Trip</a>
             </div>
           </div>
@@ -736,7 +767,6 @@
               <li>Full-board camp stay</li>
             </ul>
             <div class="pkg-footer">
-              <div class="pkg-price">KES 54,500<span>per person</span></div>
               <a href="booking.html" class="pkg-btn">Book This Trip</a>
             </div>
           </div>
@@ -756,7 +786,6 @@
               <li>Return by Sunday afternoon</li>
             </ul>
             <div class="pkg-footer">
-              <div class="pkg-price">KES 21,000<span>per person</span></div>
               <a href="booking.html" class="pkg-btn">Book This Trip</a>
             </div>
           </div>
@@ -848,7 +877,6 @@
             <th>Trip</th>
             <th>Type</th>
             <th>Duration</th>
-            <th>From</th>
             <th></th>
           </tr>
         </thead>
@@ -862,7 +890,6 @@
             </td>
             <td data-label="Type"><span class="tag-pill">Wildlife Safari</span></td>
             <td data-label="Duration">3 Days / 2 Nights</td>
-            <td data-label="From" class="price-cell">KES 32,000</td>
             <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
@@ -874,7 +901,6 @@
             </td>
             <td data-label="Type"><span class="tag-pill">Great Migration</span></td>
             <td data-label="Duration">4 Days / 3 Nights</td>
-            <td data-label="From" class="price-cell">KES 54,500</td>
             <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
@@ -886,7 +912,6 @@
             </td>
             <td data-label="Type"><span class="tag-pill">Short Escape</span></td>
             <td data-label="Duration">2 Days / 1 Night</td>
-            <td data-label="From" class="price-cell">KES 21,000</td>
             <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
@@ -898,7 +923,6 @@
             </td>
             <td data-label="Type"><span class="tag-pill">Honeymoon</span></td>
             <td data-label="Duration">4 Days / 3 Nights</td>
-            <td data-label="From" class="price-cell">KES 68,000</td>
             <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
@@ -910,7 +934,6 @@
             </td>
             <td data-label="Type"><span class="tag-pill">Cultural</span></td>
             <td data-label="Duration">3 Days / 2 Nights</td>
-            <td data-label="From" class="price-cell">KES 29,500</td>
             <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
@@ -922,7 +945,6 @@
             </td>
             <td data-label="Type"><span class="tag-pill">Group &amp; Corporate</span></td>
             <td data-label="Duration">3&ndash;5 Days</td>
-            <td data-label="From" class="price-cell">On Request</td>
             <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
@@ -934,7 +956,6 @@
             </td>
             <td data-label="Type"><span class="tag-pill">Day Trip</span></td>
             <td data-label="Duration">1 Day</td>
-            <td data-label="From" class="price-cell">KES 18,500</td>
             <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
@@ -946,7 +967,6 @@
             </td>
             <td data-label="Type"><span class="tag-pill">Activity Add-on</span></td>
             <td data-label="Duration">Half Day</td>
-            <td data-label="From" class="price-cell">KES 45,000</td>
             <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
         </tbody>
@@ -1098,6 +1118,8 @@
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => {
     navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open');
+
   });
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => navLinks.classList.remove('open'));
