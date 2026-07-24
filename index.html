@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --forest-deep:#0A2E1C;
+    --forest-deep:#308e5f;
     --forest:#0F4C2E;
     --forest-light:#1E6E46;
     --gold:#C6982F;
@@ -121,6 +121,8 @@
   }
   .nav-links a:hover{color:var(--ivory);}
   .nav-links a:hover::after{width:100%;}
+  .nav-links a.active{color:var(--gold-light);}
+  .nav-links a.active::after{width:100%;background:var(--gold-light);}
 
   .nav-cta{
     display:inline-block;
@@ -507,6 +509,7 @@
 </style>
 </head>
 <body>
+
 <header>
   <nav class="wrap">
     <a href="#top" class="brand">
@@ -517,12 +520,11 @@
       </div>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#why">Why Us</a></li>
-      <li><a href="#trip-types">Trip Types</a></li>
-      <li><a href="#packages">Packages</a></li>
-      <li><a href="#activities">Activities</a></li>
-      <li><a href="#all-trips">All Trips</a></li>
-      <li><a href="#book" class="nav-cta">Book a Trip</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="tours.html">Tours &amp; Packages</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="booking.html" class="nav-cta">Book Now</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -543,8 +545,8 @@
         <h1>Ride up front. <em>See Kenya</em> the way it's meant to be seen.</h1>
         <p class="lede">Frontseat Tourguide plans and leads safaris into the Maasai Mara and across Kenya, with a Nairobi operations team handling every detail before you set off.</p>
         <div class="hero-actions">
-          <a href="#book" class="btn-primary">Book Your Safari</a>
-          <a href="#packages" class="btn-ghost">View Packages</a>
+          <a href="booking.html" class="btn-primary">Book Your Safari</a>
+          <a href="tours.html" class="btn-ghost">View Packages</a>
         </div>
         <div class="hero-stats">
           <div class="stat">
@@ -684,6 +686,9 @@
           </div>
         </div>
       </div>
+      <div style="margin-top:44px;text-align:center;">
+        <a href="tours.html" class="btn-ghost">Explore All Tours &amp; Packages</a>
+      </div>
     </div>
   </section>
 
@@ -712,7 +717,7 @@
             </ul>
             <div class="pkg-footer">
               <div class="pkg-price">KES 32,000<span>per person</span></div>
-              <a href="#book" class="pkg-btn">Book This Trip</a>
+              <a href="booking.html" class="pkg-btn">Book This Trip</a>
             </div>
           </div>
         </div>
@@ -732,7 +737,7 @@
             </ul>
             <div class="pkg-footer">
               <div class="pkg-price">KES 54,500<span>per person</span></div>
-              <a href="#book" class="pkg-btn">Book This Trip</a>
+              <a href="booking.html" class="pkg-btn">Book This Trip</a>
             </div>
           </div>
         </div>
@@ -752,10 +757,24 @@
             </ul>
             <div class="pkg-footer">
               <div class="pkg-price">KES 21,000<span>per person</span></div>
-              <a href="#book" class="pkg-btn">Book This Trip</a>
+              <a href="booking.html" class="pkg-btn">Book This Trip</a>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESTINATIONS TEASER ============ -->
+  <section style="background:var(--ivory);padding:0 0 96px;">
+    <div class="wrap">
+      <div style="border:1px solid var(--line);padding:44px 40px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;">
+        <div style="max-width:560px;">
+          <span class="eyebrow" style="color:var(--forest);display:block;margin-bottom:12px;">Where We Operate</span>
+          <h2 style="font-size:26px;color:var(--charcoal);margin-bottom:10px;">Maasai Mara, Amboseli, Tsavo East, Diani Beach, Mount Kenya, Lake Nakuru &amp; Nairobi National Park.</h2>
+          <p style="font-size:14.5px;color:var(--charcoal-soft);">Seven regions, one operations team. See what each destination offers before you pick a trip.</p>
+        </div>
+        <a href="destinations.html" class="btn-primary">View All Destinations</a>
       </div>
     </div>
   </section>
@@ -844,7 +863,7 @@
             <td data-label="Type"><span class="tag-pill">Wildlife Safari</span></td>
             <td data-label="Duration">3 Days / 2 Nights</td>
             <td data-label="From" class="price-cell">KES 32,000</td>
-            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
             <td data-label="Trip">
@@ -856,7 +875,7 @@
             <td data-label="Type"><span class="tag-pill">Great Migration</span></td>
             <td data-label="Duration">4 Days / 3 Nights</td>
             <td data-label="From" class="price-cell">KES 54,500</td>
-            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
             <td data-label="Trip">
@@ -868,7 +887,7 @@
             <td data-label="Type"><span class="tag-pill">Short Escape</span></td>
             <td data-label="Duration">2 Days / 1 Night</td>
             <td data-label="From" class="price-cell">KES 21,000</td>
-            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
             <td data-label="Trip">
@@ -880,7 +899,7 @@
             <td data-label="Type"><span class="tag-pill">Honeymoon</span></td>
             <td data-label="Duration">4 Days / 3 Nights</td>
             <td data-label="From" class="price-cell">KES 68,000</td>
-            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
             <td data-label="Trip">
@@ -892,7 +911,7 @@
             <td data-label="Type"><span class="tag-pill">Cultural</span></td>
             <td data-label="Duration">3 Days / 2 Nights</td>
             <td data-label="From" class="price-cell">KES 29,500</td>
-            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
             <td data-label="Trip">
@@ -904,7 +923,7 @@
             <td data-label="Type"><span class="tag-pill">Group &amp; Corporate</span></td>
             <td data-label="Duration">3&ndash;5 Days</td>
             <td data-label="From" class="price-cell">On Request</td>
-            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
             <td data-label="Trip">
@@ -916,7 +935,7 @@
             <td data-label="Type"><span class="tag-pill">Day Trip</span></td>
             <td data-label="Duration">1 Day</td>
             <td data-label="From" class="price-cell">KES 18,500</td>
-            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
           <tr>
             <td data-label="Trip">
@@ -928,7 +947,7 @@
             <td data-label="Type"><span class="tag-pill">Activity Add-on</span></td>
             <td data-label="Duration">Half Day</td>
             <td data-label="From" class="price-cell">KES 45,000</td>
-            <td data-label=""><a href="#book" class="trip-link">Book</a></td>
+            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
           </tr>
         </tbody>
       </table>
@@ -1041,19 +1060,19 @@
       <div class="footer-col">
         <h4>Explore</h4>
         <ul>
-          <li><a href="#why">Why Us</a></li>
-          <li><a href="#trip-types">Trip Types</a></li>
-          <li><a href="#packages">Top Packages</a></li>
-          <li><a href="#activities">Top Activities</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="tours.html">Tours &amp; Packages</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Trips</h4>
         <ul>
-          <li><a href="#all-trips">All Trips</a></li>
-          <li><a href="#book">Book a Trip</a></li>
-          <li><a href="#trip-types">Wildlife Safaris</a></li>
-          <li><a href="#trip-types">Group &amp; Corporate</a></li>
+          <li><a href="tours.html">All Tours</a></li>
+          <li><a href="booking.html">Book a Trip</a></li>
+          <li><a href="tours.html">Wildlife Safaris</a></li>
+          <li><a href="tours.html">Group &amp; Corporate</a></li>
         </ul>
       </div>
       <div class="footer-col">

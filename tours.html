@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tours &amp; Packages — Frontseat Tourguide</title>
+<meta name="description" content="Browse Frontseat Tourguide packages by category: wildlife safaris, beach holidays, mountain hiking, cultural tours, and day trips.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#308e5f;
+    --forest:#0F4C2E;
+    --forest-light:#1E6E46;
+    --gold:#C6982F;
+    --gold-light:#E3B85B;
+    --ivory:#F8F3E7;
+    --ivory-dim:#EFE6D2;
+    --charcoal:#1C1712;
+    --charcoal-soft:#4A4238;
+    --line: rgba(28,23,18,0.14);
+    --line-light: rgba(248,243,231,0.22);
+    --radius: 2px;
+    --max: 1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--ivory);color:var(--charcoal);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;line-height:1.12;}
+  .eyebrow{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;}
+
+  .topbar{background:var(--forest-deep);color:var(--ivory-dim);font-size:13px;}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:9px 32px;flex-wrap:wrap;gap:6px;}
+  .topbar-contacts{display:flex;gap:22px;flex-wrap:wrap;}
+  .topbar-contacts a{opacity:0.92;transition:opacity .2s;}
+  .topbar-contacts a:hover{opacity:1;color:var(--gold-light);}
+  .topbar-loc{font-family:'Space Grotesk',sans-serif;letter-spacing:0.08em;font-size:11.5px;text-transform:uppercase;opacity:0.85;}
+
+  header{position:sticky;top:0;z-index:100;background:var(--forest-deep);border-bottom:1px solid var(--line-light);}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{width:46px;height:46px;object-fit:cover;border-radius:50%;border:1.5px solid var(--gold);}
+  .brand-text{color:var(--ivory);line-height:1.2;}
+  .brand-text .name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;letter-spacing:0.01em;}
+  .brand-text .sub{font-family:'Space Grotesk',sans-serif;font-size:10.5px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-light);}
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{color:var(--ivory-dim);font-size:14px;font-weight:500;position:relative;padding:4px 0;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--gold);transition:width .25s ease;}
+  .nav-links a:hover{color:var(--ivory);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-links a.active{color:var(--gold-light);}
+  .nav-links a.active::after{width:100%;background:var(--gold-light);}
+  .nav-cta{display:inline-block;background:var(--gold);color:var(--forest-deep);font-weight:600;font-size:13.5px;padding:11px 22px;border-radius:var(--radius);letter-spacing:0.01em;transition:background .2s ease, transform .2s ease;}
+  .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
+  .nav-toggle{display:none;background:none;flex-direction:column;gap:5px;padding:6px;}
+  .nav-toggle span{width:24px;height:2px;background:var(--ivory);display:block;}
+
+  .page-hero{background:linear-gradient(180deg, var(--forest-deep) 0%, var(--forest) 100%);color:var(--ivory);padding:64px 0 46px;}
+  .breadcrumb{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ivory-dim);margin-bottom:18px;}
+  .breadcrumb a{color:var(--gold-light);}
+  .page-hero h1{font-size:clamp(32px,4.6vw,50px);color:var(--ivory);max-width:680px;}
+  .page-hero p{margin-top:16px;font-size:16px;line-height:1.7;color:var(--ivory-dim);max-width:560px;}
+
+  /* Filter bar */
+  .filter-bar{background:var(--forest);border-bottom:1px solid var(--line-light);position:sticky;top:79px;z-index:90;}
+  .filter-bar .wrap{display:flex;gap:10px;padding:18px 32px;flex-wrap:wrap;}
+  .filter-btn{
+    font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:0.06em;
+    text-transform:uppercase;color:var(--ivory-dim);border:1px solid var(--line-light);
+    padding:10px 18px;border-radius:var(--radius);transition:all .2s ease;
+  }
+  .filter-btn:hover{border-color:var(--gold-light);color:var(--ivory);}
+  .filter-btn.active{background:var(--gold);border-color:var(--gold);color:var(--forest-deep);}
+
+  section{padding:88px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head .eyebrow{color:var(--forest);margin-bottom:14px;display:block;}
+  .section-head h2{font-size:clamp(26px,3.2vw,36px);color:var(--charcoal);}
+  .section-head p{margin-top:14px;font-size:15.5px;line-height:1.7;color:var(--charcoal-soft);}
+
+  .cat-group{margin-bottom:64px;}
+  .cat-group:last-child{margin-bottom:0;}
+  .cat-head{display:flex;align-items:baseline;gap:16px;margin-bottom:28px;border-bottom:1px solid var(--line);padding-bottom:18px;}
+  .cat-head h3{font-size:24px;color:var(--charcoal);}
+  .cat-head span{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--charcoal-soft);}
+
+  .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .pkg-card{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:box-shadow .25s ease, transform .25s ease;}
+  .pkg-card:hover{box-shadow:0 18px 40px rgba(10,46,28,0.12);transform:translateY(-4px);}
+  .pkg-card.hidden{display:none;}
+  .pkg-img{aspect-ratio:16/11;position:relative;overflow:hidden;}
+  .pkg-img img{width:100%;height:100%;object-fit:cover;}
+  .pkg-badge{position:absolute;top:16px;left:16px;background:var(--gold);color:var(--forest-deep);font-family:'Space Grotesk',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:6px 12px;}
+  .pkg-body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1;}
+  .pkg-meta{display:flex;justify-content:space-between;align-items:center;font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--charcoal-soft);margin-bottom:12px;}
+  .pkg-body h3{font-size:20px;color:var(--charcoal);margin-bottom:12px;}
+  .pkg-list{margin-bottom:20px;}
+  .pkg-list li{font-size:13.5px;color:var(--charcoal-soft);padding-left:16px;position:relative;margin-bottom:7px;line-height:1.5;}
+  .pkg-list li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:1px;background:var(--gold);}
+  .pkg-footer{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid var(--line);}
+  .pkg-price{font-family:'Fraunces',serif;font-size:19px;color:var(--forest);font-weight:600;}
+  .pkg-price span{font-family:'Inter',sans-serif;font-size:12px;color:var(--charcoal-soft);font-weight:400;display:block;}
+  .pkg-btn{font-size:13px;font-weight:600;color:var(--forest);border-bottom:1px solid var(--forest);padding-bottom:2px;transition:color .2s ease, border-color .2s ease;}
+  .pkg-btn:hover{color:var(--gold);border-color:var(--gold);}
+
+  .empty-state{display:none;text-align:center;padding:60px 0;color:var(--charcoal-soft);font-size:15px;}
+  .empty-state.show{display:block;}
+
+  .cta-band{background:var(--forest-deep);color:var(--ivory);text-align:center;padding:80px 0;}
+  .cta-band h2{color:var(--ivory);font-size:clamp(26px,3.4vw,38px);margin-bottom:18px;}
+  .cta-band p{color:var(--ivory-dim);font-size:15px;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;}
+  .btn-primary{background:var(--gold);color:var(--forest-deep);padding:15px 28px;border-radius:var(--radius);font-weight:600;font-size:14.5px;transition:background .2s ease, transform .2s ease;display:inline-block;}
+  .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+
+  footer{background:var(--forest-deep);color:var(--ivory-dim);padding-top:72px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:40px;padding-bottom:56px;border-bottom:1px solid var(--line-light);}
+  .footer-brand .brand{margin-bottom:18px;}
+  .footer-brand p{font-size:14px;line-height:1.7;max-width:280px;color:var(--ivory-dim);}
+  .footer-col h4{font-family:'Space Grotesk',sans-serif;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px;font-weight:600;}
+  .footer-col ul li{margin-bottom:12px;}
+  .footer-col ul li a{font-size:14px;color:var(--ivory-dim);transition:color .2s ease;}
+  .footer-col ul li a:hover{color:var(--gold-light);}
+  .footer-social{display:flex;gap:12px;margin-top:20px;}
+  .footer-social a{width:36px;height:36px;border:1px solid var(--line-light);display:flex;align-items:center;justify-content:center;transition:border-color .2s ease, background .2s ease;}
+  .footer-social a:hover{border-color:var(--gold-light);background:rgba(255,255,255,0.05);}
+  .footer-social svg{width:16px;height:16px;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:26px 0;font-size:12.5px;color:var(--ivory-dim);flex-wrap:wrap;gap:10px;}
+  .footer-bottom .fine{opacity:0.75;}
+
+  @media (max-width:980px){
+    .pkg-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:760px){
+    .wrap{padding:0 20px;}
+    .topbar .wrap{padding:9px 20px;justify-content:center;text-align:center;}
+    .topbar-loc{display:none;}
+    .nav-links{position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;background:var(--forest-deep);flex-direction:column;align-items:flex-start;padding:100px 32px 32px;gap:28px;transform:translateX(100%);transition:transform .3s ease;border-left:1px solid var(--line-light);}
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a{font-size:17px;}
+    .nav-cta{margin-top:8px;}
+    .nav-toggle{display:flex;}
+    section{padding:56px 0;}
+    .page-hero{padding:44px 0 36px;}
+    .filter-bar{position:static;}
+    .filter-bar .wrap{padding:16px 20px;overflow-x:auto;flex-wrap:nowrap;}
+    .pkg-grid{grid-template-columns:1fr;}
+    .cat-head{flex-direction:column;align-items:flex-start;gap:4px;}
+    .footer-grid{grid-template-columns:1fr;gap:36px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Frontseat Tourguide logo">
+      <div class="brand-text">
+        <div class="name">Frontseat Tourguide</div>
+        <div class="sub">Maasai Mara &amp; Kenya Safaris</div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="tours.html" class="active">Tours &amp; Packages</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Tours &amp; Packages</div>
+      <h1>Every package we run, organised by category.</h1>
+      <p>Filter by the kind of trip you're after, or browse everything below. Every package can be adjusted for your dates and group size.</p>
+    </div>
+  </section>
+
+  <div class="filter-bar">
+    <div class="wrap">
+      <button class="filter-btn active" data-filter="all">All Packages</button>
+      <button class="filter-btn" data-filter="wildlife">Wildlife Safaris</button>
+      <button class="filter-btn" data-filter="beach">Beach Holidays</button>
+      <button class="filter-btn" data-filter="mountain">Mountain Hiking</button>
+      <button class="filter-btn" data-filter="cultural">Cultural Tours</button>
+      <button class="filter-btn" data-filter="day-trips">Day Trips</button>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+
+      <!-- WILDLIFE SAFARIS -->
+      <div class="cat-group">
+        <div class="cat-head"><h3>Wildlife Safaris</h3><span>3 Packages</span></div>
+        <div class="pkg-grid">
+          <div class="pkg-card" data-category="wildlife">
+            <div class="pkg-img"><img src="images/logo.png" alt="Classic Maasai Mara safari"><span class="pkg-badge">Most Booked</span></div>
+            <div class="pkg-body">
+              <div class="pkg-meta"><span>3 Days / 2 Nights</span><span>2&ndash;6 Guests</span></div>
+              <h3>Classic Maasai Mara Safari</h3>
+              <ul class="pkg-list">
+                <li>Return transport from Nairobi</li>
+                <li>Two full-day game drives</li>
+                <li>Park entry fees included</li>
+                <li>Camp accommodation &amp; meals</li>
+              </ul>
+              <div class="pkg-footer"><div class="pkg-price"></div><a href="booking.html" class="pkg-btn">Book This Trip</a></div>
+            </div>
+          </div>
+          <div class="pkg-card" data-category="wildlife">
+            <div class="pkg-img"><img src="images/logo.png" alt="Amboseli elephant safari"><span class="pkg-badge">Popular</span></div>
+            <div class="pkg-body">
+              <div class="pkg-meta"><span>3 Days / 2 Nights</span><span>2&ndash;6 Guests</span></div>
+              <h3>Amboseli Elephant Safari</h3>
+              <ul class="pkg-list">
+                <li>Views of Mount Kilimanjaro</li>
+                <li>Large elephant herd sightings</li>
+                <li>Two game drives included</li>
+                <li>Lodge accommodation &amp; meals</li>
+              </ul>
+              <div class="pkg-footer"><div class="pkg-price"></div><a href="booking.html" class="pkg-btn">Book This Trip</a></div>
+            </div>
+          </div>
+          <div class="pkg-card" data-category="wildlife">
+            <div class="pkg-img"><img src="images/logo.png" alt="Tsavo East wilderness safari"><span class="pkg-badge">Off The Path</span></div>
+            <div class="pkg-body">
+              <div class="pkg-meta"><span>3 Days / 2 Nights</span><span>2&ndash;6 Guests</span></div>
+              <h3>Tsavo East Wilderness Safari</h3>
+              <ul class="pkg-list">
+                <li>Red-earth elephant country</li>
+                <li>Two full-day game drives</li>
+                <li>Camp accommodation &amp; meals</li>
+                <li>Park entry fees included</li>
+              </ul>
+              <div class="pkg-footer"><div class="pkg-price"></div><a href="booking.html" class="pkg-btn">Book This Trip</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEACH HOLIDAYS -->
+      <div class="cat-group">
+        <div class="cat-head"><h3>Beach Holidays</h3><span>2 Packages</span></div>
+        <div class="pkg-grid">
+          <div class="pkg-card" data-category="beach">
+            <div class="pkg-img"><img src="images/logo.png" alt="Diani Beach getaway"><span class="pkg-badge">Coastal</span></div>
+            <div class="pkg-body">
+              <div class="pkg-meta"><span>4 Days / 3 Nights</span><span>1&ndash;6 Guests</span></div>
+              <h3>Diani Beach Getaway</h3>
+              <ul class="pkg-list">
+                <li>Beachfront accommodation</li>
+                <li>Return flights from Nairobi</li>
+                <li>Airport &amp; hotel transfers</li>
+                <li>Daily breakfast included</li>
+              </ul>
+              <div class="pkg-footer"><div class="pkg-price"></div><a href="booking.html" class="pkg-btn">Book This Trip</a></div>
+            </div>
+          </div>
+          <div class="pkg-card" data-category="beach">
+            <div class="pkg-img"><img src="images/logo.png" alt="Beach and bush combo trip"><span class="pkg-badge">Combo</span></div>
+            <div class="pkg-body">
+              <div class="pkg-meta"><span>6 Days / 5 Nights</span><span>2&ndash;6 Guests</span></div>
+              <h3>Beach &amp; Bush Combo</h3>
+              <ul class="pkg-list">
+                <li>Tsavo East safari, then Diani Beach</li>
+                <li>Domestic flights connecting both legs</li>
+                <li>Full-board on safari, breakfast at coast</li>
+                <li>All transfers arranged</li>
+              </ul>
+              <div class="pkg-footer"><div class="pkg-price"></div><a href="booking.html" class="pkg-btn">Book This Trip</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOUNTAIN HIKING -->
+      <div class="cat-group">
+        <div class="cat-head"><h3>Mountain Hiking</h3><span>2 Packages</span></div>
+        <div class="pkg-grid">
+          <div class="pkg-card" data-category="mountain">
+            <div class="pkg-img"><img src="images/logo.png" alt="Mount Kenya trekking expedition"><span class="pkg-badge">Challenging</span></div>
+            <div class="pkg-body">
+              <div class="pkg-meta"><span>5 Days / 4 Nights</span><span>2&ndash;8 Guests</span></div>
+              <h3>Mount Kenya Trekking Expedition</h3>
+              <ul class="pkg-list">
+                <li>Sirimon &ndash; Chogoria route</li>
+                <li>Licensed mountain guide &amp; porters</li>
+                <li>Hut accommodation on route</li>
+                <li>All park fees included</li>
+              </ul>
+              <div class="pkg-footer"><div class="pkg-price">KES 62,000<span>per person</span></div><a href="booking.html" class="pkg-btn">Book This Trip</a></div>
+            </div>
+          </div>
+          <div class="pkg-card" data-category="mountain">
+            <div class="pkg-img"><img src="images/logo.png" alt="Point Lenana summit trek"><span class="pkg-badge">Summit Push</span></div>
+            <div class="pkg-body">
+              <div class="pkg-meta"><span>4 Days / 3 Nights</span><span>2&ndash;8 Guests</span></div>
+              <h3>Point Lenana Summit Trek</h3>
+              <ul class="pkg-list">
+                <li>Naro Moru route, shorter itinerary</li>
+                <li>Guide, porters, and cook included</li>
+                <li>Summit attempt at sunrise</li>
+                <li>Camping equipment provided</li>
+              </ul>
+              <div class="pkg-footer"><div class="pkg-price"></div><a href="booking.html" class="pkg-btn">Book This Trip</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CULTURAL TOURS -->
+      <div class="cat-group">
+        <div class="cat-head"><h3>Cultural Tours</h3><span>2 Packages</span></div>
+        <div class="pkg-grid">
+          <div class="pkg-card" data-category="cultural">
+            <div class="pkg-img"><img src="images/logo.png" alt="Maasai cultural immersion trip"><span class="pkg-badge">Immersive</span></div>
+            <div class="pkg-body">
+              <div class="pkg-meta"><span>3 Days / 2 Nights</span><span>2&ndash;6 Guests</span></div>
+              <h3>Maasai Cultural Immersion</h3>
+              <ul class="pkg-list">
+                <li>Homestead visit &amp; village walk</li>
+                <li>Traditional craft demonstration</li>
+                <li>One game drive included</li>
+                <li>Camp accommodation &amp; meals</li>
+              </ul>
+              <div class="pkg-footer"><div class="pkg-price"></div><a href="booking.html" class="pkg-btn">Book This Trip</a></div>
+            </div>
+          </div>
+          <div class="pkg-card" data-category="cultural">
+            <div class="pkg-img"><img src="images/logo.png" alt="Nairobi heritage and culture tour"><span class="pkg-badge">City</span></div>
+            <div class="pkg-body">
+              <div class="pkg-meta"><span>1 Day</span><span>1&ndash;8 Guests</span></div>
+              <h3>Nairobi Heritage &amp; Culture Tour</h3>
+              <ul class="pkg-list">
+                <li>Museum &amp; craft market visits</li>
+                <li>Local lunch included</li>
+                <li>Private vehicle &amp; guide</li>
+                <li>Hotel pick-up &amp; drop-off</li>
+              </ul>
+              <div class="pkg-footer"><div class="pkg-price"></div><a href="booking.html" class="pkg-btn">Book This Trip</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY TRIPS -->
+      <div class="cat-group">
+        <div class="cat-head"><h3>Day Trips</h3><span>2 Packages</span></div>
+        <div class="pkg-grid">
+          <div class="pkg-card" data-category="day-trips">
+            <div class="pkg-img"><img src="images/logo.png" alt="Nairobi National Park day trip"><span class="pkg-badge">Convenient</span></div>
+            <div class="pkg-body">
+              <div class="pkg-meta"><span>1 Day</span><span>1&ndash;6 Guests</span></div>
+              <h3>Nairobi National Park Day Trip</h3>
+              <ul class="pkg-list">
+                <li>Half-day game drive</li>
+                <li>Park entry fees included</li>
+                <li>Pick-up from Nairobi hotels</li>
+                <li>Bottled water on board</li>
+              </ul>
+              <div class="pkg-footer"><div class="pkg-price"></div><a href="booking.html" class="pkg-btn">Book This Trip</a></div>
+            </div>
+          </div>
+          <div class="pkg-card" data-category="day-trips">
+            <div class="pkg-img"><img src="images/logo.png" alt="Lake Nakuru day trip"><span class="pkg-badge">Full Day</span></div>
+            <div class="pkg-body">
+              <div class="pkg-meta"><span>1 Day</span><span>1&ndash;6 Guests</span></div>
+              <h3>Lake Nakuru Day Trip</h3>
+              <ul class="pkg-list">
+                <li>Flamingo &amp; rhino sanctuary viewing</li>
+                <li>Return transport from Nairobi</li>
+                <li>Packed lunch included</li>
+                <li>Park entry fees included</li>
+              </ul>
+              <div class="pkg-footer"><div class="pkg-price"></div><a href="booking.html" class="pkg-btn">Book This Trip</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="empty-state" id="emptyState">No packages found in this category yet. Get in touch and we'll build one for you.</div>
+
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Don't see the trip you have in mind?</h2>
+      <p>Most itineraries can be built to order around your dates and interests.</p>
+      <a href="booking.html" class="btn-primary">Request a Custom Trip</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <img src="images/logo.png" alt="Frontseat Tourguide logo">
+          <div class="brand-text">
+            <div class="name">Frontseat Tourguide</div>
+            <div class="sub">Maasai Mara &amp; Kenya Safaris</div>
+          </div>
+        </div>
+        <p>A Nairobi-run safari and tour operator based in and around the Maasai Mara Game Reserve.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 8h-2a2 2 0 00-2 2v3H9v3h2v6h3v-6h2.2l.8-3H14v-2a1 1 0 011-1h2z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.4"/><circle cx="16.6" cy="7.4" r="0.6" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-4A8 8 0 1112 20a8 8 0 01-4-1z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="tours.html">Tours &amp; Packages</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Trips</h4>
+        <ul>
+          <li><a href="tours.html">All Tours</a></li>
+          <li><a href="booking.html">Book a Trip</a></li>
+          <li><a href="tours.html">Wildlife Safaris</a></li>
+          <li><a href="tours.html">Group &amp; Corporate</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0715240331">0715 240331</a></li>
+          <li><a href="tel:0759701496">0759 701496</a></li>
+          <li><a href="mailto:olesimitia17@gmail.com">olesimitia17@gmail.com</a></li>
+          <li>Operations: Nairobi, Kenya</li>
+          <li>Base Camp: Maasai Mara Game Reserve</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Frontseat Tourguide. All rights reserved.</span>
+      <span class="fine">Licensed tour operator &middot; Nairobi, Kenya</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const pkgCards = document.querySelectorAll('.pkg-card');
+  const catGroups = document.querySelectorAll('.cat-group');
+  const emptyState = document.getElementById('emptyState');
+
+  function applyFilter(filter){
+    filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === filter));
+
+    if(filter === 'all'){
+      pkgCards.forEach(c => c.classList.remove('hidden'));
+      catGroups.forEach(g => g.style.display = '');
+      emptyState.classList.remove('show');
+      return;
+    }
+
+    let anyVisible = false;
+    catGroups.forEach(group => {
+      const cards = group.querySelectorAll('.pkg-card');
+      let groupHasMatch = false;
+      cards.forEach(card => {
+        if(card.dataset.category === filter){
+          card.classList.remove('hidden');
+          groupHasMatch = true;
+          anyVisible = true;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+      group.style.display = groupHasMatch ? '' : 'none';
+    });
+    emptyState.classList.toggle('show', !anyVisible);
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
+  });
+
+  const hash = window.location.hash.replace('#', '');
+  const validFilters = ['wildlife', 'beach', 'mountain', 'cultural', 'day-trips'];
+  if(validFilters.includes(hash)){
+    applyFilter(hash);
+  }
+</script>
+
+</body>
+</html>

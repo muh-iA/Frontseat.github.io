@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Frontseat Tourguide</title>
+<meta name="description" content="The story, mission, and vision behind Frontseat Tourguide, a Nairobi-run safari and tour operator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#308e5f;
+    --forest:#0F4C2E;
+    --forest-light:#1E6E46;
+    --gold:#C6982F;
+    --gold-light:#E3B85B;
+    --ivory:#F8F3E7;
+    --ivory-dim:#EFE6D2;
+    --charcoal:#1C1712;
+    --charcoal-soft:#4A4238;
+    --line: rgba(28,23,18,0.14);
+    --line-light: rgba(248,243,231,0.22);
+    --radius: 2px;
+    --max: 1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--ivory);color:var(--charcoal);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;line-height:1.12;}
+  .eyebrow{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;}
+
+  /* Topbar / Header / Nav (shared) */
+  .topbar{background:var(--forest-deep);color:var(--ivory-dim);font-size:13px;}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:9px 32px;flex-wrap:wrap;gap:6px;}
+  .topbar-contacts{display:flex;gap:22px;flex-wrap:wrap;}
+  .topbar-contacts a{opacity:0.92;transition:opacity .2s;}
+  .topbar-contacts a:hover{opacity:1;color:var(--gold-light);}
+  .topbar-loc{font-family:'Space Grotesk',sans-serif;letter-spacing:0.08em;font-size:11.5px;text-transform:uppercase;opacity:0.85;}
+
+  header{position:sticky;top:0;z-index:100;background:var(--forest-deep);border-bottom:1px solid var(--line-light);}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{width:46px;height:46px;object-fit:cover;border-radius:50%;border:1.5px solid var(--gold);}
+  .brand-text{color:var(--ivory);line-height:1.2;}
+  .brand-text .name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;letter-spacing:0.01em;}
+  .brand-text .sub{font-family:'Space Grotesk',sans-serif;font-size:10.5px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-light);}
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{color:var(--ivory-dim);font-size:14px;font-weight:500;position:relative;padding:4px 0;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--gold);transition:width .25s ease;}
+  .nav-links a:hover{color:var(--ivory);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-links a.active{color:var(--gold-light);}
+  .nav-links a.active::after{width:100%;background:var(--gold-light);}
+  .nav-cta{display:inline-block;background:var(--gold);color:var(--forest-deep);font-weight:600;font-size:13.5px;padding:11px 22px;border-radius:var(--radius);letter-spacing:0.01em;transition:background .2s ease, transform .2s ease;}
+  .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
+  .nav-toggle{display:none;background:none;flex-direction:column;gap:5px;padding:6px;}
+  .nav-toggle span{width:24px;height:2px;background:var(--ivory);display:block;}
+
+  /* Page hero (inner pages) */
+  .page-hero{
+    background:linear-gradient(180deg, var(--forest-deep) 0%, var(--forest) 100%);
+    color:var(--ivory);padding:64px 0 74px;
+  }
+  .breadcrumb{
+    font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--ivory-dim);margin-bottom:18px;
+  }
+  .breadcrumb a{color:var(--gold-light);}
+  .page-hero h1{font-size:clamp(32px,4.6vw,50px);color:var(--ivory);max-width:680px;}
+  .page-hero p{margin-top:16px;font-size:16px;line-height:1.7;color:var(--ivory-dim);max-width:560px;}
+
+  section{padding:96px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head .eyebrow{color:var(--forest);margin-bottom:14px;display:block;}
+  .section-head h2{font-size:clamp(28px,3.6vw,42px);color:var(--charcoal);}
+  .section-head p{margin-top:16px;font-size:16px;line-height:1.7;color:var(--charcoal-soft);}
+
+  .trail{display:flex;align-items:center;gap:14px;max-width:var(--max);margin:0 auto;padding:0 32px;}
+  .trail .line{flex:1;height:1px;background-image:linear-gradient(to right, var(--line) 50%, transparent 0%);background-size:10px 1px;background-repeat:repeat-x;}
+  .trail .node{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+  .trail .waypoint-label{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--charcoal-soft);white-space:nowrap;}
+
+  /* Story */
+  .story{background:var(--ivory);}
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .story-copy .eyebrow{color:var(--forest);display:block;margin-bottom:14px;}
+  .story-copy h2{font-size:clamp(26px,3.4vw,36px);margin-bottom:20px;color:var(--charcoal);}
+  .story-copy p{font-size:15.5px;line-height:1.8;color:var(--charcoal-soft);margin-bottom:16px;}
+  .story-frame{aspect-ratio:4/5;border:1px solid var(--line);padding:14px;position:relative;background:#fff;}
+  .story-frame img{width:100%;height:100%;object-fit:cover;}
+  .story-frame .tag{position:absolute;bottom:-16px;left:30px;background:var(--gold);color:var(--forest-deep);font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:9px 16px;}
+
+  /* Mission / Vision */
+  .mv{background:var(--forest-deep);color:var(--ivory);}
+  .mv .section-head .eyebrow{color:var(--gold-light);}
+  .mv .section-head h2{color:var(--ivory);}
+  .mv .section-head p{color:var(--ivory-dim);}
+  .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .mv-card{border:1px solid var(--line-light);padding:40px 36px;}
+  .mv-card .icon{width:40px;height:40px;color:var(--gold-light);margin-bottom:22px;}
+  .mv-card .icon svg{width:100%;height:100%;}
+  .mv-card h3{font-size:22px;color:var(--ivory);margin-bottom:14px;}
+  .mv-card p{font-size:15px;line-height:1.75;color:var(--ivory-dim);}
+
+  /* Experience stats */
+  .experience{background:var(--ivory);}
+  .exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .exp-card{background:var(--ivory);padding:40px 30px;text-align:left;}
+  .exp-card .num{font-family:'Fraunces',serif;font-size:38px;color:var(--forest);font-weight:600;}
+  .exp-card .lbl{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal-soft);margin-top:10px;}
+
+  /* Values / timeline strip */
+  .values{background:var(--ivory-dim);}
+  .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
+  .value-card{background:var(--ivory-dim);padding:34px 30px;}
+  .value-card h3{font-size:17px;color:var(--charcoal);margin-bottom:10px;font-weight:600;}
+  .value-card p{font-size:14px;line-height:1.65;color:var(--charcoal-soft);}
+
+  .cta-band{background:var(--forest);color:var(--ivory);text-align:center;padding:80px 0;}
+  .cta-band h2{color:var(--ivory);font-size:clamp(26px,3.4vw,38px);margin-bottom:18px;}
+  .cta-band p{color:var(--ivory-dim);font-size:15px;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;}
+  .btn-primary{background:var(--gold);color:var(--forest-deep);padding:15px 28px;border-radius:var(--radius);font-weight:600;font-size:14.5px;transition:background .2s ease, transform .2s ease;display:inline-block;}
+  .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+  .btn-ghost{border:1px solid var(--line-light);color:var(--ivory);padding:15px 28px;border-radius:var(--radius);font-weight:600;font-size:14.5px;transition:border-color .2s ease, background .2s ease;display:inline-block;}
+  .btn-ghost:hover{border-color:var(--gold-light);background:rgba(255,255,255,0.05);}
+
+  /* Footer (shared) */
+  footer{background:var(--forest-deep);color:var(--ivory-dim);padding-top:72px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:40px;padding-bottom:56px;border-bottom:1px solid var(--line-light);}
+  .footer-brand .brand{margin-bottom:18px;}
+  .footer-brand p{font-size:14px;line-height:1.7;max-width:280px;color:var(--ivory-dim);}
+  .footer-col h4{font-family:'Space Grotesk',sans-serif;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px;font-weight:600;}
+  .footer-col ul li{margin-bottom:12px;}
+  .footer-col ul li a{font-size:14px;color:var(--ivory-dim);transition:color .2s ease;}
+  .footer-col ul li a:hover{color:var(--gold-light);}
+  .footer-social{display:flex;gap:12px;margin-top:20px;}
+  .footer-social a{width:36px;height:36px;border:1px solid var(--line-light);display:flex;align-items:center;justify-content:center;transition:border-color .2s ease, background .2s ease;}
+  .footer-social a:hover{border-color:var(--gold-light);background:rgba(255,255,255,0.05);}
+  .footer-social svg{width:16px;height:16px;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:26px 0;font-size:12.5px;color:var(--ivory-dim);flex-wrap:wrap;gap:10px;}
+  .footer-bottom .fine{opacity:0.75;}
+
+  @media (max-width:980px){
+    .story-grid{grid-template-columns:1fr;}
+    .mv-grid{grid-template-columns:1fr;}
+    .exp-grid{grid-template-columns:repeat(2,1fr);}
+    .values-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:760px){
+    .wrap{padding:0 20px;}
+    .topbar .wrap{padding:9px 20px;justify-content:center;text-align:center;}
+    .topbar-loc{display:none;}
+    .nav-links{position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;background:var(--forest-deep);flex-direction:column;align-items:flex-start;padding:100px 32px 32px;gap:28px;transform:translateX(100%);transition:transform .3s ease;border-left:1px solid var(--line-light);}
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a{font-size:17px;}
+    .nav-cta{margin-top:8px;}
+    .nav-toggle{display:flex;}
+    section{padding:64px 0;}
+    .page-hero{padding:44px 0 52px;}
+    .exp-grid{grid-template-columns:1fr;}
+    .values-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:36px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Frontseat Tourguide logo">
+      <div class="brand-text">
+        <div class="name">Frontseat Tourguide</div>
+        <div class="sub">Maasai Mara &amp; Kenya Safaris</div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="tours.html">Tours &amp; Packages</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">Home</a> / About Us</div>
+      <h1>The team behind the front seat.</h1>
+      <p>Frontseat Tourguide is a Nairobi-run safari and tour operator built around one idea &mdash; the best way to see Kenya is with someone who knows the roads, the reserves, and the people who live alongside them.</p>
+    </div>
+  </section>
+
+  <!-- ============ COMPANY STORY ============ -->
+  <section class="story">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="story-copy">
+          <span class="eyebrow">Our Story</span>
+          <h2>Started with one route, one vehicle, and a front seat view of the Mara.</h2>
+          <p>Frontseat Tourguide began with a simple habit: guiding friends and family on trips into the Maasai Mara, planning the route from Nairobi and driving it personally so nothing was left to chance. Word travelled faster than expected, and the same care shown on those early trips became the standard for every booking that followed.</p>
+          <p>Today the work is run from a small operations office in Nairobi, with a base camp presence in the Mara itself. The company has grown to cover destinations well beyond the Mara, but the approach hasn't changed &mdash; plan properly, travel with someone who knows the ground, and put the guest in the front seat of the experience.</p>
+        </div>
+        <div class="story-frame">
+          <img src="images/logo.png" alt="Frontseat Tourguide team in the field">
+          <span class="tag">Est. Nairobi, Kenya</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trail">
+    <span class="node"></span>
+    <span class="line"></span>
+    <span class="waypoint-label">Mission &amp; Vision</span>
+    <span class="line"></span>
+    <span class="node"></span>
+  </div>
+
+  <!-- ============ MISSION & VISION ============ -->
+  <section class="mv">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What Drives Us</span>
+        <h2>Two ideas that shape every itinerary we build.</h2>
+      </div>
+      <div class="mv-grid">
+        <div class="mv-card">
+          <div class="icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 6l16 6v10c0 10-7 17-16 20-9-3-16-10-16-20V12z"/></svg></div>
+          <h3>Our Mission</h3>
+          <p>To give every traveller who books with us a well-planned, honestly priced, and properly guided way to experience Kenya &mdash; from the Mara's plains to its beaches, mountains, and cities.</p>
+        </div>
+        <div class="mv-card">
+          <div class="icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="24" cy="24" r="8"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6"/></svg></div>
+          <h3>Our Vision</h3>
+          <p>To be the operator Kenyan and international travellers think of first for the Maasai Mara and beyond &mdash; known for reliability, local knowledge, and trips that are shaped around the guest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Years Of Experience</span>
+        <h2>Built up trip by trip, not overnight.</h2>
+        <p>Figures below are indicative &mdash; update with your exact operating history and milestones.</p>
+      </div>
+      <div class="exp-grid">
+        <div class="exp-card"><div class="num">8+</div><div class="lbl">Years Operating</div></div>
+        <div class="exp-card"><div class="num">300+</div><div class="lbl">Travellers Guided</div></div>
+        <div class="exp-card"><div class="num">7</div><div class="lbl">Destinations Covered</div></div>
+        <div class="exp-card"><div class="num">1</div><div class="lbl">Front Seat, Every Trip</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALUES ============ -->
+  <section class="values">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How We Work</span>
+        <h2>The standards behind every itinerary.</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Honest Planning</h3>
+          <p>Clear pricing and realistic itineraries, with no surprises once you're on the road.</p>
+        </div>
+        <div class="value-card">
+          <h3>Local Guides</h3>
+          <p>Guides drawn from the communities we travel through, not generic tour scripts.</p>
+        </div>
+        <div class="value-card">
+          <h3>Nairobi-Run Logistics</h3>
+          <p>Every trip is coordinated from our Nairobi office, so transfers and permits are handled before you arrive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Ready to plan your Kenya trip?</h2>
+      <p>Tell us where you'd like to go and we'll build the itinerary around it.</p>
+      <a href="booking.html" class="btn-primary">Book a Trip</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <img src="images/logo.png" alt="Frontseat Tourguide logo">
+          <div class="brand-text">
+            <div class="name">Frontseat Tourguide</div>
+            <div class="sub">Maasai Mara &amp; Kenya Safaris</div>
+          </div>
+        </div>
+        <p>A Nairobi-run safari and tour operator based in and around the Maasai Mara Game Reserve.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 8h-2a2 2 0 00-2 2v3H9v3h2v6h3v-6h2.2l.8-3H14v-2a1 1 0 011-1h2z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.4"/><circle cx="16.6" cy="7.4" r="0.6" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-4A8 8 0 1112 20a8 8 0 01-4-1z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="tours.html">Tours &amp; Packages</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Trips</h4>
+        <ul>
+          <li><a href="tours.html">All Tours</a></li>
+          <li><a href="booking.html">Book a Trip</a></li>
+          <li><a href="tours.html">Wildlife Safaris</a></li>
+          <li><a href="tours.html">Group &amp; Corporate</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0715240331">0715 240331</a></li>
+          <li><a href="tel:0759701496">0759 701496</a></li>
+          <li><a href="mailto:olesimitia17@gmail.com">olesimitia17@gmail.com</a></li>
+          <li>Operations: Nairobi, Kenya</li>
+          <li>Base Camp: Maasai Mara Game Reserve</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Frontseat Tourguide. All rights reserved.</span>
+      <span class="fine">Licensed tour operator &middot; Nairobi, Kenya</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
+
+</body>
+</html>
