@@ -172,13 +172,56 @@
   transform:translateY(-7px) rotate(-45deg);
 }
   /* ============ HERO ============ */
-  .hero{
-    position:relative;
-    background:linear-gradient(180deg, var(--forest-deep) 0%, var(--forest) 62%, var(--forest-light) 100%);
-    color:var(--ivory);
-    overflow:hidden;
-    padding-top:96px;
+/* ============ HERO ============ */
+.hero{
+  position: relative;
+  color: var(--ivory);
+  overflow: hidden;
+  padding-top: 96px;
+
+  /* Background image */
+  background:
+    linear-gradient(
+      rgba(25,25,25,.45),
+      rgba(25,25,25,.45)
+    ),
+    url("images/hero.jpeg");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional - creates a subtle parallax effect */
+}
+.hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/hero.png") center/cover no-repeat;
+  z-index: -2;
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+.hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(8,35,22,.9),
+    rgba(8,35,22,.55),
+    rgba(8,35,22,.25)
+  );
+  z-index: -1;
+}
+
+@keyframes heroZoom{
+  from{
+    transform: scale(1);
   }
+  to{
+    transform: scale(1.08);
+  }
+}
   .hero-inner{
     max-width:var(--max);margin:0 auto;padding:64px 32px 0;
     display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;
@@ -556,6 +599,7 @@
       <li><a href="about.html">About Us</a></li>
       <li><a href="tours.html">Tours &amp; Packages</a></li>
       <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="booking.html" class="nav-cta">Book Now</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -593,12 +637,6 @@
             <div class="num">Mara</div>
             <div class="lbl">Home Ground</div>
           </div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-frame">
-          <img src="images/logo.png" alt="Maasai Mara safari scene">
-          <span class="tag">Maasai Mara Game Reserve</span>
         </div>
       </div>
     </div>
@@ -670,7 +708,7 @@
       </div>
       <div class="types-grid">
         <div class="type-card">
-          <div class="type-img"><img src="images/logo.png" alt="Wildlife safari trip"></div>
+          <div class="type-img"><img src="images/wildlife.jpeg" alt="Wildlife safari trip"></div>
           <div class="type-body">
             <span class="num">01</span>
             <h3>Wildlife Safaris</h3>
@@ -678,7 +716,7 @@
           </div>
         </div>
         <div class="type-card">
-          <div class="type-img"><img src="images/logo.png" alt="Great Migration trip"></div>
+          <div class="type-img"><img src="images/wildbeast.jpeg" alt="Great Migration trip"></div>
           <div class="type-body">
             <span class="num">02</span>
             <h3>Great Migration</h3>
@@ -686,7 +724,7 @@
           </div>
         </div>
         <div class="type-card">
-          <div class="type-img"><img src="images/logo.png" alt="Cultural Maasai experience"></div>
+          <div class="type-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy7tYzMas-lyZs2fmIDlBe50ZeF04ArJzHC3DTc5hfcs2XQz9FxnbYvYSB&s=10" alt="Cultural Maasai experience"></div>
           <div class="type-body">
             <span class="num">03</span>
             <h3>Cultural Maasai Experience</h3>
@@ -694,7 +732,7 @@
           </div>
         </div>
         <div class="type-card">
-          <div class="type-img"><img src="images/logo.png" alt="Honeymoon safari getaway"></div>
+          <div class="type-img"><img src="images/honey.jpeg" alt="Honeymoon safari getaway"></div>
           <div class="type-body">
             <span class="num">04</span>
             <h3>Honeymoon Getaways</h3>
@@ -702,7 +740,7 @@
           </div>
         </div>
         <div class="type-card">
-          <div class="type-img"><img src="images/logo.png" alt="Group and corporate trips"></div>
+          <div class="type-img"><img src="https://media.tacdn.com/media/attractions-splice-spp-360x240/0b/30/9e/40.jpg" alt="Group and corporate trips"></div>
           <div class="type-body">
             <span class="num">05</span>
             <h3>Group &amp; Corporate Trips</h3>
@@ -710,7 +748,7 @@
           </div>
         </div>
         <div class="type-card">
-          <div class="type-img"><img src="images/logo.png" alt="Nairobi day trips"></div>
+          <div class="type-img"><img src="https://s3.amazonaws.com/cdn.micato.com/wp-content/uploads/2018/09/07223907/maasai-mara.jpg" alt="Nairobi day trips"></div>
           <div class="type-body">
             <span class="num">06</span>
             <h3>Day Trips &amp; Short Escapes</h3>
@@ -735,11 +773,11 @@
       <div class="pkg-grid">
         <div class="pkg-card">
           <div class="pkg-img">
-            <img src="images/logo.png" alt="Classic Maasai Mara safari package">
+            <img src="images/wildlife.jpeg" alt="Classic Maasai Mara safari package">
             <span class="pkg-badge">Most Booked</span>
           </div>
           <div class="pkg-body">
-            <div class="pkg-meta"><span>3 Days / 2 Nights</span><span>2&ndash;6 Guests</span></div>
+            <div class="pkg-meta"><span>3 Days / 2 Nights</span></div>
             <h3>Classic Maasai Mara Safari</h3>
             <ul class="pkg-list">
               <li>Return transport from Nairobi</li>
@@ -754,11 +792,11 @@
         </div>
         <div class="pkg-card">
           <div class="pkg-img">
-            <img src="images/logo.png" alt="Great Migration safari package">
+            <img src="images/wildbeast.jpeg" alt="Great Migration safari package">
             <span class="pkg-badge">Seasonal</span>
           </div>
           <div class="pkg-body">
-            <div class="pkg-meta"><span>4 Days / 3 Nights</span><span>2&ndash;6 Guests</span></div>
+            <div class="pkg-meta"><span>4 Days / 3 Nights</span>></div>
             <h3>Great Migration Safari</h3>
             <ul class="pkg-list">
               <li>Timed to the river crossings</li>
@@ -773,12 +811,12 @@
         </div>
         <div class="pkg-card">
           <div class="pkg-img">
-            <img src="images/logo.png" alt="Weekend Nairobi to Mara package">
+            <img src="https://www.glamping-kenya.com/site/assets/files/6661/nairobi-national-park-.jpg" alt="Weekend Nairobi to Mara package">
             <span class="pkg-badge">Short Escape</span>
           </div>
           <div class="pkg-body">
-            <div class="pkg-meta"><span>2 Days / 1 Night</span><span>1&ndash;4 Guests</span></div>
-            <h3>Weekend Mara Escape</h3>
+            <div class="pkg-meta"><span>2 Days / 1 Night</span></div>
+            <h3>Weekend Nairobi Escape</h3>
             <ul class="pkg-list">
               <li>Friday evening departure</li>
               <li>One sunrise game drive</li>
@@ -884,7 +922,7 @@
           <tr>
             <td data-label="Trip">
               <div class="trip-name-cell">
-                <img src="images/logo.png" alt="Classic Maasai Mara safari">
+                <img src="images/wildlife.jpeg" alt="Classic Maasai Mara safari">
                 <div><div class="tn">Classic Maasai Mara Safari</div><div class="tt">Nairobi &ndash; Mara &ndash; Nairobi</div></div>
               </div>
             </td>
@@ -895,7 +933,7 @@
           <tr>
             <td data-label="Trip">
               <div class="trip-name-cell">
-                <img src="images/logo.png" alt="Great Migration safari">
+                <img src="images/wildbeast.jpeg" alt="Great Migration safari">
                 <div><div class="tn">Great Migration Safari</div><div class="tt">Mara River Crossings</div></div>
               </div>
             </td>
@@ -906,7 +944,7 @@
           <tr>
             <td data-label="Trip">
               <div class="trip-name-cell">
-                <img src="images/logo.png" alt="Weekend Mara escape">
+                <img src="images/6.jpeg" alt="Weekend Mara escape">
                 <div><div class="tn">Weekend Mara Escape</div><div class="tt">Nairobi &ndash; Mara &ndash; Nairobi</div></div>
               </div>
             </td>
@@ -917,7 +955,7 @@
           <tr>
             <td data-label="Trip">
               <div class="trip-name-cell">
-                <img src="images/logo.png" alt="Honeymoon Mara getaway">
+                <img src="images/honey.jpeg" alt="Honeymoon Mara getaway">
                 <div><div class="tn">Honeymoon Mara Getaway</div><div class="tt">Private Camp Stay</div></div>
               </div>
             </td>
@@ -928,7 +966,7 @@
           <tr>
             <td data-label="Trip">
               <div class="trip-name-cell">
-                <img src="images/logo.png" alt="Maasai cultural immersion trip">
+                <img src="https://s3.amazonaws.com/cdn.micato.com/wp-content/uploads/2019/12/07210455/micatosafaris_76227451_Full-scaled.jpg" alt="Maasai cultural immersion trip">
                 <div><div class="tn">Maasai Cultural Immersion</div><div class="tt">Village Stay &amp; Workshops</div></div>
               </div>
             </td>
@@ -939,7 +977,7 @@
           <tr>
             <td data-label="Trip">
               <div class="trip-name-cell">
-                <img src="images/logo.png" alt="Corporate group retreat">
+                <img src="images/8.jpeg" alt="Corporate group retreat">
                 <div><div class="tn">Corporate Group Retreat</div><div class="tt">Custom Group Itinerary</div></div>
               </div>
             </td>
@@ -950,7 +988,7 @@
           <tr>
             <td data-label="Trip">
               <div class="trip-name-cell">
-                <img src="images/logo.png" alt="Nairobi day trip to Mara">
+                <img src="https://www.glamping-kenya.com/site/assets/files/6661/nairobi-national-park-.jpg" alt="Nairobi day trip to Mara">
                 <div><div class="tn">Nairobi Day Trip to the Mara</div><div class="tt">Single-Day Flying Visit</div></div>
               </div>
             </td>
@@ -961,8 +999,8 @@
           <tr>
             <td data-label="Trip">
               <div class="trip-name-cell">
-                <img src="images/logo.png" alt="Balloon safari and breakfast add-on">
-                <div><div class="tn">Balloon Safari &amp; Bush Breakfast</div><div class="tt">Add-on to any package</div></div>
+                <img src="images/7.jpeg" alt="Balloon safari and breakfast add-on">
+                <div><div class="tn">Safari &amp; Bush Breakfast</div><div class="tt">Add-on to any package</div></div>
               </div>
             </td>
             <td data-label="Type"><span class="tag-pill">Activity Add-on</span></td>
@@ -1098,8 +1136,7 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="tel:0715240331">0715 240331</a></li>
-          <li><a href="tel:0759701496">0759 701496</a></li>
+          <li><a href="tel:0700328814">0700328814</a></li>
           <li><a href="mailto:olesimitia17@gmail.com">olesimitia17@gmail.com</a></li>
           <li>Operations: Nairobi, Kenya</li>
           <li>Base Camp: Maasai Mara Game Reserve</li>
