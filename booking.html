@@ -229,70 +229,114 @@
         </div>
         <div class="booking-form">
           <form id="bookingForm">
-            <div class="form-row">
-              <div class="field">
-                <label for="fname">Full Name</label>
-                <input type="text" id="fname" name="fname" placeholder="Your full name" required>
-              </div>
-              <div class="field">
-                <label for="fphone">Phone Number</label>
-                <input type="tel" id="fphone" name="fphone" placeholder="07XX XXX XXX" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="field">
-                <label for="femail">Email Address</label>
-                <input type="email" id="femail" name="femail" placeholder="you@email.com" required>
-              </div>
-              <div class="field">
-                <label for="ftrip">Trip Type</label>
-                <select id="ftrip" name="ftrip" required>
-                  <option value="" disabled selected>Select a trip type</option>
-                  <optgroup label="Wildlife Safaris">
-                    <option>Classic Maasai Mara Safari</option>
-                    <option>Amboseli Elephant Safari</option>
-                    <option>Tsavo East Wilderness Safari</option>
-                  </optgroup>
-                  <optgroup label="Beach Holidays">
-                    <option>Diani Beach Getaway</option>
-                    <option>Beach &amp; Bush Combo</option>
-                  </optgroup>
-                  <optgroup label="Mountain Hiking">
-                    <option>Mount Kenya Trekking Expedition</option>
-                    <option>Point Lenana Summit Trek</option>
-                  </optgroup>
-                  <optgroup label="Cultural Tours">
-                    <option>Maasai Cultural Immersion</option>
-                    <option>Nairobi Heritage &amp; Culture Tour</option>
-                  </optgroup>
-                  <optgroup label="Day Trips">
-                    <option>Nairobi National Park Day Trip</option>
-                    <option>Lake Nakuru Day Trip</option>
-                  </optgroup>
-                  <option>Not Sure Yet / Custom Trip</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="field">
-                <label for="fdate">Preferred Date</label>
-                <input type="date" id="fdate" name="fdate" required>
-              </div>
-              <div class="field">
-                <label for="fguests">Number of Travellers</label>
-                <input type="number" id="fguests" name="fguests" min="1" placeholder="e.g. 2" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="field full">
-                <label for="fmessage">Additional Details</label>
-                <textarea id="fmessage" name="fmessage" placeholder="Tell us anything else about your trip"></textarea>
-              </div>
-            </div>
-            <button type="submit" class="form-submit">Send Booking Request</button>
-            <p class="form-note">We typically respond within one business day.</p>
-            <div class="form-success" id="formSuccess">Thank you. Your request has been noted &mdash; our team will contact you shortly on the details provided.</div>
-          </form>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="fname">Full Name</label>
+      <input
+        type="text"
+        id="fname"
+        name="from_name"
+        placeholder="Your full name"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="fphone">Phone Number</label>
+      <input
+        type="tel"
+        id="fphone"
+        name="phone"
+        placeholder="07XX XXX XXX"
+        required
+      >
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="femail">Email Address</label>
+      <input
+        type="email"
+        id="femail"
+        name="reply_to"
+        placeholder="you@email.com"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="ftrip">Trip Type</label>
+      <select
+        id="ftrip"
+        name="trip_type"
+        required
+      >
+        <option value="" disabled selected>Select a trip type</option>
+        <option>Wildlife Safari</option>
+        <option>Great Migration</option>
+        <option>Cultural Maasai Experience</option>
+        <option>Honeymoon Getaway</option>
+        <option>Group & Corporate Trip</option>
+        <option>Day Trip</option>
+        <option>Not Sure Yet</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="fdate">Preferred Date</label>
+      <input
+        type="date"
+        id="fdate"
+        name="travel_date"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="fguests">Number of Travellers</label>
+      <input
+        type="number"
+        id="fguests"
+        name="travellers"
+        min="1"
+        placeholder="e.g. 2"
+        required
+      >
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field full">
+      <label for="fmessage">Additional Details</label>
+      <textarea
+        id="fmessage"
+        name="message"
+        placeholder="Tell us anything else about your trip"
+      ></textarea>
+    </div>
+  </div>
+
+  <button type="submit" class="form-submit">
+    Send Booking Request
+  </button>
+
+  <p class="form-note">
+    We typically respond within one business day.
+  </p>
+
+  <div
+    class="form-success"
+    id="formSuccess"
+    style="display:none;"
+  >
+    Thank you! Your booking request has been sent successfully.
+  </div>
+
+</form>
         </div>
       </div>
     </div>
@@ -394,6 +438,55 @@
     bookingForm.reset();
   });
 </script>
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+<script>
+
+emailjs.init({
+    publicKey: "YOUR_PUBLIC_KEY",
+});
+
+const bookingFormEl = document.getElementById("bookingForm");
+const success = document.getElementById("formSuccess");
+
+bookingFormEl.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const submitBtn = bookingFormEl.querySelector(".form-submit");
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "Sending...";
+
+    emailjs.sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        bookingFormEl
+    )
+
+    .then(function(){
+
+        success.style.display = "block";
+
+        bookingFormEl.reset();
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Send Booking Request";
+
+    })
+
+    .catch(function(error){
+
+        console.log(error);
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Send Booking Request";
+
+    });
+
+});
+
+</script>
 </body>
 </html>

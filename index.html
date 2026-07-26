@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Frontseat Tourguide — Maasai Mara Safaris &amp; Kenya Tours</title>
 <meta name="description" content="Frontseat Tourguide: licensed safari and tour operator based in Nairobi, running trips to the Maasai Mara and across Kenya.">
+<!-- Netlify Identity: catches the login links from CMS invite/reset emails, wherever they land -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -706,55 +719,8 @@
         <h2>Whatever brings you to Kenya, there's a route for it.</h2>
         <p>Six ways to travel with us, each built around a different pace and purpose.</p>
       </div>
-      <div class="types-grid">
-        <div class="type-card">
-          <div class="type-img"><img src="images/wildlife.jpeg" alt="Wildlife safari trip"></div>
-          <div class="type-body">
-            <span class="num">01</span>
-            <h3>Wildlife Safaris</h3>
-            <p>Classic game drives through the Maasai Mara in search of the big cats and the wider plains game.</p>
-          </div>
-        </div>
-        <div class="type-card">
-          <div class="type-img"><img src="images/wildbeast.jpeg" alt="Great Migration trip"></div>
-          <div class="type-body">
-            <span class="num">02</span>
-            <h3>Great Migration</h3>
-            <p>Seasonal trips timed to the wildebeest crossings between the Mara and the Serengeti.</p>
-          </div>
-        </div>
-        <div class="type-card">
-          <div class="type-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy7tYzMas-lyZs2fmIDlBe50ZeF04ArJzHC3DTc5hfcs2XQz9FxnbYvYSB&s=10" alt="Cultural Maasai experience"></div>
-          <div class="type-body">
-            <span class="num">03</span>
-            <h3>Cultural Maasai Experience</h3>
-            <p>Guided visits to Maasai homesteads and villages bordering the reserve.</p>
-          </div>
-        </div>
-        <div class="type-card">
-          <div class="type-img"><img src="images/honey.jpeg" alt="Honeymoon safari getaway"></div>
-          <div class="type-body">
-            <span class="num">04</span>
-            <h3>Honeymoon Getaways</h3>
-            <p>Slower-paced private trips built for couples, from camp choice to sundowner spots.</p>
-          </div>
-        </div>
-        <div class="type-card">
-          <div class="type-img"><img src="https://media.tacdn.com/media/attractions-splice-spp-360x240/0b/30/9e/40.jpg" alt="Group and corporate trips"></div>
-          <div class="type-body">
-            <span class="num">05</span>
-            <h3>Group &amp; Corporate Trips</h3>
-            <p>Team retreats and group travel organised end to end, from Nairobi pick-up to Mara camp.</p>
-          </div>
-        </div>
-        <div class="type-card">
-          <div class="type-img"><img src="https://s3.amazonaws.com/cdn.micato.com/wp-content/uploads/2018/09/07223907/maasai-mara.jpg" alt="Nairobi day trips"></div>
-          <div class="type-body">
-            <span class="num">06</span>
-            <h3>Day Trips &amp; Short Escapes</h3>
-            <p>Shorter trips out of Nairobi for travellers working with limited time.</p>
-          </div>
-        </div>
+      <div class="types-grid" id="tripTypesGrid">
+        <p style="color:var(--ivory-dim);font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:0.06em;">Loading trip types&hellip;</p>
       </div>
       <div style="margin-top:44px;text-align:center;">
         <a href="tours.html" class="btn-ghost">Explore All Tours &amp; Packages</a>
@@ -918,95 +884,8 @@
             <th></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td data-label="Trip">
-              <div class="trip-name-cell">
-                <img src="images/wildlife.jpeg" alt="Classic Maasai Mara safari">
-                <div><div class="tn">Classic Maasai Mara Safari</div><div class="tt">Nairobi &ndash; Mara &ndash; Nairobi</div></div>
-              </div>
-            </td>
-            <td data-label="Type"><span class="tag-pill">Wildlife Safari</span></td>
-            <td data-label="Duration">3 Days / 2 Nights</td>
-            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
-          </tr>
-          <tr>
-            <td data-label="Trip">
-              <div class="trip-name-cell">
-                <img src="images/wildbeast.jpeg" alt="Great Migration safari">
-                <div><div class="tn">Great Migration Safari</div><div class="tt">Mara River Crossings</div></div>
-              </div>
-            </td>
-            <td data-label="Type"><span class="tag-pill">Great Migration</span></td>
-            <td data-label="Duration">4 Days / 3 Nights</td>
-            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
-          </tr>
-          <tr>
-            <td data-label="Trip">
-              <div class="trip-name-cell">
-                <img src="images/6.jpeg" alt="Weekend Mara escape">
-                <div><div class="tn">Weekend Mara Escape</div><div class="tt">Nairobi &ndash; Mara &ndash; Nairobi</div></div>
-              </div>
-            </td>
-            <td data-label="Type"><span class="tag-pill">Short Escape</span></td>
-            <td data-label="Duration">2 Days / 1 Night</td>
-            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
-          </tr>
-          <tr>
-            <td data-label="Trip">
-              <div class="trip-name-cell">
-                <img src="images/honey.jpeg" alt="Honeymoon Mara getaway">
-                <div><div class="tn">Honeymoon Mara Getaway</div><div class="tt">Private Camp Stay</div></div>
-              </div>
-            </td>
-            <td data-label="Type"><span class="tag-pill">Honeymoon</span></td>
-            <td data-label="Duration">4 Days / 3 Nights</td>
-            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
-          </tr>
-          <tr>
-            <td data-label="Trip">
-              <div class="trip-name-cell">
-                <img src="https://s3.amazonaws.com/cdn.micato.com/wp-content/uploads/2019/12/07210455/micatosafaris_76227451_Full-scaled.jpg" alt="Maasai cultural immersion trip">
-                <div><div class="tn">Maasai Cultural Immersion</div><div class="tt">Village Stay &amp; Workshops</div></div>
-              </div>
-            </td>
-            <td data-label="Type"><span class="tag-pill">Cultural</span></td>
-            <td data-label="Duration">3 Days / 2 Nights</td>
-            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
-          </tr>
-          <tr>
-            <td data-label="Trip">
-              <div class="trip-name-cell">
-                <img src="images/8.jpeg" alt="Corporate group retreat">
-                <div><div class="tn">Corporate Group Retreat</div><div class="tt">Custom Group Itinerary</div></div>
-              </div>
-            </td>
-            <td data-label="Type"><span class="tag-pill">Group &amp; Corporate</span></td>
-            <td data-label="Duration">3&ndash;5 Days</td>
-            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
-          </tr>
-          <tr>
-            <td data-label="Trip">
-              <div class="trip-name-cell">
-                <img src="https://www.glamping-kenya.com/site/assets/files/6661/nairobi-national-park-.jpg" alt="Nairobi day trip to Mara">
-                <div><div class="tn">Nairobi Day Trip to the Mara</div><div class="tt">Single-Day Flying Visit</div></div>
-              </div>
-            </td>
-            <td data-label="Type"><span class="tag-pill">Day Trip</span></td>
-            <td data-label="Duration">1 Day</td>
-            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
-          </tr>
-          <tr>
-            <td data-label="Trip">
-              <div class="trip-name-cell">
-                <img src="images/7.jpeg" alt="Balloon safari and breakfast add-on">
-                <div><div class="tn">Safari &amp; Bush Breakfast</div><div class="tt">Add-on to any package</div></div>
-              </div>
-            </td>
-            <td data-label="Type"><span class="tag-pill">Activity Add-on</span></td>
-            <td data-label="Duration">Half Day</td>
-            <td data-label=""><a href="booking.html" class="trip-link">Book</a></td>
-          </tr>
+        <tbody id="allTripsBody">
+          <tr><td colspan="4" style="color:var(--ivory-dim);">Loading trips&hellip;</td></tr>
         </tbody>
       </table>
     </div>
@@ -1040,56 +919,115 @@
           </ul>
         </div>
         <div class="booking-form">
-          <form id="bookingForm">
-            <div class="form-row">
-              <div class="field">
-                <label for="fname">Full Name</label>
-                <input type="text" id="fname" name="fname" placeholder="Your full name" required>
-              </div>
-              <div class="field">
-                <label for="fphone">Phone Number</label>
-                <input type="tel" id="fphone" name="fphone" placeholder="07XX XXX XXX" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="field">
-                <label for="femail">Email Address</label>
-                <input type="email" id="femail" name="femail" placeholder="you@email.com" required>
-              </div>
-              <div class="field">
-                <label for="ftrip">Trip Type</label>
-                <select id="ftrip" name="ftrip" required>
-                  <option value="" disabled selected>Select a trip type</option>
-                  <option>Wildlife Safari</option>
-                  <option>Great Migration</option>
-                  <option>Cultural Maasai Experience</option>
-                  <option>Honeymoon Getaway</option>
-                  <option>Group &amp; Corporate Trip</option>
-                  <option>Day Trip</option>
-                  <option>Not Sure Yet</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="field">
-                <label for="fdate">Preferred Date</label>
-                <input type="date" id="fdate" name="fdate" required>
-              </div>
-              <div class="field">
-                <label for="fguests">Number of Travellers</label>
-                <input type="number" id="fguests" name="fguests" min="1" placeholder="e.g. 2" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="field full">
-                <label for="fmessage">Additional Details</label>
-                <textarea id="fmessage" name="fmessage" placeholder="Tell us anything else about your trip"></textarea>
-              </div>
-            </div>
-            <button type="submit" class="form-submit">Send Booking Request</button>
-            <p class="form-note">We typically respond within one business day.</p>
-            <div class="form-success" id="formSuccess">Thank you. Your request has been noted &mdash; our team will contact you shortly on the details provided.</div>
-          </form>
+<form id="bookingForm">
+
+  <div class="form-row">
+    <div class="field">
+      <label for="fname">Full Name</label>
+      <input
+        type="text"
+        id="fname"
+        name="from_name"
+        placeholder="Your full name"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="fphone">Phone Number</label>
+      <input
+        type="tel"
+        id="fphone"
+        name="phone"
+        placeholder="07XX XXX XXX"
+        required
+      >
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="femail">Email Address</label>
+      <input
+        type="email"
+        id="femail"
+        name="reply_to"
+        placeholder="you@email.com"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="ftrip">Trip Type</label>
+      <select
+        id="ftrip"
+        name="trip_type"
+        required
+      >
+        <option value="" disabled selected>Select a trip type</option>
+        <option>Wildlife Safari</option>
+        <option>Great Migration</option>
+        <option>Cultural Maasai Experience</option>
+        <option>Honeymoon Getaway</option>
+        <option>Group & Corporate Trip</option>
+        <option>Day Trip</option>
+        <option>Not Sure Yet</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="fdate">Preferred Date</label>
+      <input
+        type="date"
+        id="fdate"
+        name="travel_date"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="fguests">Number of Travellers</label>
+      <input
+        type="number"
+        id="fguests"
+        name="travellers"
+        min="1"
+        placeholder="e.g. 2"
+        required
+      >
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field full">
+      <label for="fmessage">Additional Details</label>
+      <textarea
+        id="fmessage"
+        name="message"
+        placeholder="Tell us anything else about your trip"
+      ></textarea>
+    </div>
+  </div>
+
+  <button type="submit" class="form-submit">
+    Send Booking Request
+  </button>
+
+  <p class="form-note">
+    We typically respond within one business day.
+  </p>
+
+  <div
+    class="form-success"
+    id="formSuccess"
+    style="display:none;"
+  >
+    Thank you! Your booking request has been sent successfully.
+  </div>
+
+</form>
         </div>
       </div>
     </div>
@@ -1149,7 +1087,56 @@
     </div>
   </div>
 </footer>
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+<script>
+
+emailjs.init({
+    publicKey: "YOUR_PUBLIC_KEY",
+});
+
+const bookingFormEl = document.getElementById("bookingForm");
+const success = document.getElementById("formSuccess");
+
+bookingFormEl.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const submitBtn = bookingFormEl.querySelector(".form-submit");
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "Sending...";
+
+    emailjs.sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        bookingFormEl
+    )
+
+    .then(function(){
+
+        success.style.display = "block";
+
+        bookingFormEl.reset();
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Send Booking Request";
+
+    })
+
+    .catch(function(error){
+
+        console.log(error);
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Send Booking Request";
+
+    });
+
+});
+
+</script>
 <script>
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
@@ -1169,6 +1156,90 @@
     formSuccess.classList.add('show');
     bookingForm.reset();
   });
+</script>
+
+<!-- ============ CMS-DRIVEN TRIP TYPES ============ -->
+<!-- Content edited by the client lives in /content/trip-types.json via the /admin CMS. -->
+<script>
+  fetch('content/trip-types.json?_=' + Date.now())
+    .then(res => {
+      if (!res.ok) throw new Error('trip-types.json not found');
+      return res.json();
+    })
+    .then(data => {
+      const items = (data && data.items) || [];
+      const grid = document.getElementById('tripTypesGrid');
+      if (!items.length) {
+        grid.innerHTML = '<p style="color:var(--ivory-dim);">No trip types added yet.</p>';
+        return;
+      }
+      grid.innerHTML = items.map((item, i) => {
+        const num = String(i + 1).padStart(2, '0');
+        const img = item.image || 'images/logo.png';
+        const title = item.title || '';
+        const desc = item.description || '';
+        return '<div class="type-card">' +
+          '<div class="type-img"><img src="' + img + '" alt="' + title.replace(/"/g, '&quot;') + '"></div>' +
+          '<div class="type-body">' +
+            '<span class="num">' + num + '</span>' +
+            '<h3>' + title + '</h3>' +
+            '<p>' + desc + '</p>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    })
+    .catch(err => {
+      console.warn('Could not load trip types:', err);
+      const grid = document.getElementById('tripTypesGrid');
+      grid.innerHTML = '<p style="color:var(--ivory-dim);">Trip types could not be loaded right now.</p>';
+    });
+</script>
+
+<!-- ============ CMS-DRIVEN ALL TRIPS TABLE ============ -->
+<!-- Content edited by the client lives in /content/all-trips.json via the /admin CMS. -->
+<script>
+  function escapeHtmlAllTrips(str){
+    return String(str || '').replace(/[&<>"']/g, m => (
+      {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]
+    ));
+  }
+
+  fetch('content/all-trips.json?_=' + Date.now())
+    .then(res => {
+      if (!res.ok) throw new Error('all-trips.json not found');
+      return res.json();
+    })
+    .then(data => {
+      const items = (data && data.items) || [];
+      const body = document.getElementById('allTripsBody');
+      if (!items.length) {
+        body.innerHTML = '<tr><td colspan="4" style="color:var(--ivory-dim);">No trips added yet.</td></tr>';
+        return;
+      }
+      body.innerHTML = items.map(item => {
+        const img = item.image || 'images/logo.png';
+        const name = escapeHtmlAllTrips(item.name);
+        const subtitle = escapeHtmlAllTrips(item.subtitle);
+        const type = escapeHtmlAllTrips(item.type);
+        const duration = escapeHtmlAllTrips(item.duration);
+        return '<tr>' +
+          '<td data-label="Trip">' +
+            '<div class="trip-name-cell">' +
+              '<img src="' + img + '" alt="' + name + '">' +
+              '<div><div class="tn">' + name + '</div><div class="tt">' + subtitle + '</div></div>' +
+            '</div>' +
+          '</td>' +
+          '<td data-label="Type"><span class="tag-pill">' + type + '</span></td>' +
+          '<td data-label="Duration">' + duration + '</td>' +
+          '<td data-label=""><a href="booking.html" class="trip-link">Book</a></td>' +
+        '</tr>';
+      }).join('');
+    })
+    .catch(err => {
+      console.warn('Could not load all trips:', err);
+      const body = document.getElementById('allTripsBody');
+      body.innerHTML = '<tr><td colspan="4" style="color:var(--ivory-dim);">Trips could not be loaded right now.</td></tr>';
+    });
 </script>
 
 </body>

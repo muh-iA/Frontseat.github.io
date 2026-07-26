@@ -1,0 +1,110 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where images uploaded through the CMS get saved, and the path used
+# to reference them on the live site.
+media_folder: "images/uploads"
+public_folder: "images/uploads"
+
+publish_mode: simple
+
+collections:
+
+  - name: "trip_types"
+    label: "Home Page — Trip Types"
+    files:
+      - name: "trip_types"
+        label: "Trip Types Section"
+        file: "content/trip-types.json"
+        description: "The six trip type cards shown on the home page."
+        fields:
+          - label: "Trip Types"
+            name: "items"
+            widget: "list"
+            min: 1
+            max: 6
+            summary: "{{title}}"
+            fields:
+              - {label: "Photo", name: "image", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+  - name: "packages"
+    label: "Tours & Packages"
+    files:
+      - name: "packages"
+        label: "All Packages"
+        file: "content/packages.json"
+        description: "Every package shown on the Tours & Packages page. Pick a category for each one — the page groups and filters them automatically."
+        fields:
+          - label: "Packages"
+            name: "items"
+            widget: "list"
+            summary: "{{title}} ({{fields.category}})"
+            fields:
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - {label: "Wildlife Safaris", value: "wildlife"}
+                  - {label: "Cultural Tours", value: "cultural"}
+                  - {label: "Day Trips", value: "day-trips"}
+              - {label: "Photo", name: "image", widget: "image"}
+              - label: "Badge Text"
+                name: "badge"
+                widget: "string"
+                required: false
+                hint: "Small label shown on the photo, e.g. Most Booked. Leave blank for none."
+              - label: "Duration"
+                name: "duration"
+                widget: "string"
+                hint: "e.g. 3 Days / 2 Nights"
+              - label: "Group Size"
+                name: "guests"
+                widget: "string"
+                hint: "e.g. 2–6 Guests"
+              - {label: "Package Title", name: "title", widget: "string"}
+              - label: "Highlights"
+                name: "highlights"
+                widget: "list"
+                hint: "Short bullet points, e.g. Park entry fees included"
+                field: {label: "Highlight", name: "item", widget: "string"}
+              - label: "Price (KES)"
+                name: "price"
+                widget: "string"
+                required: false
+                hint: "Leave blank to show \"On Request\" instead of a price."
+              - label: "Price Note"
+                name: "priceNote"
+                widget: "string"
+                required: false
+                default: "per person"
+
+  - name: "all_trips"
+    label: "Home Page — All Trips Table"
+    files:
+      - name: "all_trips"
+        label: "All Trips Table"
+        file: "content/all-trips.json"
+        description: "The full trips table near the bottom of the home page."
+        fields:
+          - label: "Trips"
+            name: "items"
+            widget: "list"
+            summary: "{{name}}"
+            fields:
+              - {label: "Photo", name: "image", widget: "image"}
+              - {label: "Trip Name", name: "name", widget: "string"}
+              - label: "Subtitle"
+                name: "subtitle"
+                widget: "string"
+                hint: "Short route description, e.g. Nairobi – Mara – Nairobi"
+              - label: "Type"
+                name: "type"
+                widget: "string"
+                hint: "Short tag, e.g. Wildlife Safari, Day Trip, Honeymoon"
+              - label: "Duration"
+                name: "duration"
+                widget: "string"
+                hint: "e.g. 3 Days / 2 Nights"

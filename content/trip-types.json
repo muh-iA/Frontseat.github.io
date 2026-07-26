@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "image": "images/wildlife.jpeg",
+      "title": "Wildlife Safaris",
+      "description": "Classic game drives through the Maasai Mara in search of the big cats and the wider plains game."
+    },
+    {
+      "image": "images/wildbeast.jpeg",
+      "title": "Great Migration",
+      "description": "Seasonal trips timed to the wildebeest crossings between the Mara and the Serengeti."
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy7tYzMas-lyZs2fmIDlBe50ZeF04ArJzHC3DTc5hfcs2XQz9FxnbYvYSB&s=10",
+      "title": "Cultural Maasai Experience",
+      "description": "Guided visits to Maasai homesteads and villages bordering the reserve."
+    },
+    {
+      "image": "images/honey.jpeg",
+      "title": "Honeymoon Getaways",
+      "description": "Slower-paced private trips built for couples, from camp choice to sundowner spots."
+    },
+    {
+      "image": "https://media.tacdn.com/media/attractions-splice-spp-360x240/0b/30/9e/40.jpg",
+      "title": "Group & Corporate Trips",
+      "description": "Team retreats and group travel organised end to end, from Nairobi pick-up to Mara camp."
+    },
+    {
+      "image": "https://s3.amazonaws.com/cdn.micato.com/wp-content/uploads/2018/09/07223907/maasai-mara.jpg",
+      "title": "Day Trips & Short Escapes",
+      "description": "Shorter trips out of Nairobi for travellers working with limited time."
+    }
+  ]
+}

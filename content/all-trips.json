@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "image": "images/wildlife.jpeg",
+      "name": "Classic Maasai Mara Safari",
+      "subtitle": "Nairobi \u2013 Mara \u2013 Nairobi",
+      "type": "Wildlife Safari",
+      "duration": "3 Days / 2 Nights"
+    },
+    {
+      "image": "images/wildbeast.jpeg",
+      "name": "Great Migration Safari",
+      "subtitle": "Mara River Crossings",
+      "type": "Great Migration",
+      "duration": "4 Days / 3 Nights"
+    },
+    {
+      "image": "images/6.jpeg",
+      "name": "Weekend Mara Escape",
+      "subtitle": "Nairobi \u2013 Mara \u2013 Nairobi",
+      "type": "Short Escape",
+      "duration": "2 Days / 1 Night"
+    },
+    {
+      "image": "images/honey.jpeg",
+      "name": "Honeymoon Mara Getaway",
+      "subtitle": "Private Camp Stay",
+      "type": "Honeymoon",
+      "duration": "4 Days / 3 Nights"
+    },
+    {
+      "image": "https://s3.amazonaws.com/cdn.micato.com/wp-content/uploads/2019/12/07210455/micatosafaris_76227451_Full-scaled.jpg",
+      "name": "Maasai Cultural Immersion",
+      "subtitle": "Village Stay & Workshops",
+      "type": "Cultural",
+      "duration": "3 Days / 2 Nights"
+    },
+    {
+      "image": "images/8.jpeg",
+      "name": "Corporate Group Retreat",
+      "subtitle": "Custom Group Itinerary",
+      "type": "Group & Corporate",
+      "duration": "3\u20135 Days"
+    },
+    {
+      "image": "https://www.glamping-kenya.com/site/assets/files/6661/nairobi-national-park-.jpg",
+      "name": "Nairobi Day Trip to the Mara",
+      "subtitle": "Single-Day Flying Visit",
+      "type": "Day Trip",
+      "duration": "1 Day"
+    },
+    {
+      "image": "images/7.jpeg",
+      "name": "Safari & Bush Breakfast",
+      "subtitle": "Add-on to any package",
+      "type": "Activity Add-on",
+      "duration": "Half Day"
+    }
+  ]
+}
