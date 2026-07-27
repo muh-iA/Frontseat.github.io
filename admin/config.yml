@@ -19,7 +19,7 @@ backend:
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
 # Add site links in Decap CMS (optional)
-site_url: https://marafrontseattourguide.netlify.app
+site_url: https://muh-ia.github.io/Frontseat.github.io/
 
 # Where images uploaded through the CMS get saved, and the path used
 # to reference them on the live site.
