@@ -3,11 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frontseat Tourguide — Maasai Mara Safaris &amp; Kenya Tours</title>
-<meta name="description" content="Frontseat Tourguide: licensed safari and tour operator based in Nairobi, running trips to the Maasai Mara and across Kenya.">
+<title>Mara Frontseat Tours | Maasai Mara Safaris & Kenya Tours</title><meta name="description" content="Frontseat Tourguide: licensed safari and tour operator based in Nairobi, running trips to the Maasai Mara and across Kenya.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://marafrontseattours.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
 <style>
   :root{
     --forest-deep:#0A2E1C;
@@ -1080,7 +1088,7 @@
 <script>
 
 emailjs.init({
-    publicKey: "YOUR_PUBLIC_KEY",
+    publicKey: "x1kZ9WEPXUbsCYiWS",
 });
 
 const bookingFormEl = document.getElementById("bookingForm");
@@ -1096,8 +1104,8 @@ bookingFormEl.addEventListener("submit", function(e) {
     submitBtn.innerHTML = "Sending...";
 
     emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_0nll5sx",
+        "template_cjdento",
         bookingFormEl
     )
 
@@ -1134,14 +1142,6 @@ bookingFormEl.addEventListener("submit", function(e) {
   });
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => navLinks.classList.remove('open'));
-  });
-
-  const bookingForm = document.getElementById('bookingForm');
-  const formSuccess = document.getElementById('formSuccess');
-  bookingForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    formSuccess.classList.add('show');
-    bookingForm.reset();
   });
 </script>
 

@@ -3,11 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book a Trip — Frontseat Tourguide</title>
+<title>Book Your Maasai Mara Safari | Mara Frontseat Tours</title>
+<meta name="robots" content="index,follow">
 <meta name="description" content="Book a safari or tour with Frontseat Tourguide. Send your travel dates and preferred trip and our Nairobi team will respond with availability.">
+<link rel="canonical" href="https://marafrontseattours.com/booking.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
 <style>
   :root{
     --forest-deep:#0A2E1C;
@@ -233,46 +242,22 @@
   <div class="form-row">
     <div class="field">
       <label for="fname">Full Name</label>
-      <input
-        type="text"
-        id="fname"
-        name="from_name"
-        placeholder="Your full name"
-        required
-      >
+      <input type="text" id="fname" name="from_name" placeholder="Your full name" required>
     </div>
-
     <div class="field">
       <label for="fphone">Phone Number</label>
-      <input
-        type="tel"
-        id="fphone"
-        name="phone"
-        placeholder="07XX XXX XXX"
-        required
-      >
+      <input type="tel" id="fphone" name="phone" placeholder="07XX XXX XXX" required>
     </div>
   </div>
 
   <div class="form-row">
     <div class="field">
       <label for="femail">Email Address</label>
-      <input
-        type="email"
-        id="femail"
-        name="reply_to"
-        placeholder="you@email.com"
-        required
-      >
+      <input type="email" id="femail" name="reply_to" placeholder="you@email.com" required>
     </div>
-
     <div class="field">
       <label for="ftrip">Trip Type</label>
-      <select
-        id="ftrip"
-        name="trip_type"
-        required
-      >
+      <select id="ftrip" name="trip_type" required>
         <option value="" disabled selected>Select a trip type</option>
         <option>Wildlife Safari</option>
         <option>Great Migration</option>
@@ -288,51 +273,26 @@
   <div class="form-row">
     <div class="field">
       <label for="fdate">Preferred Date</label>
-      <input
-        type="date"
-        id="fdate"
-        name="travel_date"
-        required
-      >
+      <input type="date" id="fdate" name="travel_date" required>
     </div>
-
     <div class="field">
       <label for="fguests">Number of Travellers</label>
-      <input
-        type="number"
-        id="fguests"
-        name="travellers"
-        min="1"
-        placeholder="e.g. 2"
-        required
-      >
+      <input type="number" id="fguests" name="travellers" min="1" placeholder="e.g. 2" required>
     </div>
   </div>
 
   <div class="form-row">
     <div class="field full">
       <label for="fmessage">Additional Details</label>
-      <textarea
-        id="fmessage"
-        name="message"
-        placeholder="Tell us anything else about your trip"
-      ></textarea>
+      <textarea id="fmessage" name="message" placeholder="Tell us anything else about your trip"></textarea>
     </div>
   </div>
 
-  <button type="submit" class="form-submit">
-    Send Booking Request
-  </button>
+  <button type="submit" class="form-submit">Send Booking Request</button>
 
-  <p class="form-note">
-    We typically respond within one business day.
-  </p>
+  <p class="form-note">We typically respond within one business day.</p>
 
-  <div
-    class="form-success"
-    id="formSuccess"
-    style="display:none;"
-  >
+  <div class="form-success" id="formSuccess" style="display:none;">
     Thank you! Your booking request has been sent successfully.
   </div>
 
@@ -429,64 +389,36 @@
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
-
-  const bookingForm = document.getElementById('bookingForm');
-  const formSuccess = document.getElementById('formSuccess');
-  bookingForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    formSuccess.classList.add('show');
-    bookingForm.reset();
-  });
 </script>
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <script>
+  emailjs.init({ publicKey: "x1kZ9WEPXUbsCYiWS" });
 
-emailjs.init({
-    publicKey: "YOUR_PUBLIC_KEY",
-});
+  const bookingFormEl = document.getElementById("bookingForm");
+  const success = document.getElementById("formSuccess");
 
-const bookingFormEl = document.getElementById("bookingForm");
-const success = document.getElementById("formSuccess");
-
-bookingFormEl.addEventListener("submit", function(e) {
-
+  bookingFormEl.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const submitBtn = bookingFormEl.querySelector(".form-submit");
-
     submitBtn.disabled = true;
     submitBtn.innerHTML = "Sending...";
 
-    emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        bookingFormEl
-    )
-
-    .then(function(){
-
+    emailjs.sendForm("service_0nll5sx", "template_cjdento", bookingFormEl)
+      .then(function () {
         success.style.display = "block";
-
         bookingFormEl.reset();
-
         submitBtn.disabled = false;
         submitBtn.innerHTML = "Send Booking Request";
-
-    })
-
-    .catch(function(error){
-
-        console.log(error);
-
+      })
+      .catch(function (error) {
+        console.error("EmailJS error:", error);
+        alert("Something went wrong sending your request. Please try again or call us directly.");
         submitBtn.disabled = false;
         submitBtn.innerHTML = "Send Booking Request";
-
-    });
-
-});
-
+      });
+  });
 </script>
 </body>
 </html>
