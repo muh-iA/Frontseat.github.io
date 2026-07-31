@@ -393,7 +393,7 @@
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  emailjs.init({ publicKey: "x1kZ9WEPXUbsCYiWS" });
+  emailjs.init({ publicKey: "u6OggH6PW1VY-65Ur" });
 
   const bookingFormEl = document.getElementById("bookingForm");
   const success = document.getElementById("formSuccess");
@@ -405,7 +405,7 @@
     submitBtn.disabled = true;
     submitBtn.innerHTML = "Sending...";
 
-    emailjs.sendForm("service_0nll5sx", "template_cjdento", bookingFormEl)
+    emailjs.sendForm("service_g5bfy0s", "template_9qb7o6k", bookingFormEl)
       .then(function () {
         success.style.display = "block";
         bookingFormEl.reset();
