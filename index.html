@@ -529,6 +529,10 @@
     display:flex;justify-content:space-between;align-items:center;
     padding:26px 0;font-size:12.5px;color:var(--ivory-dim);flex-wrap:wrap;gap:10px;
   }
+  .footer-bottom p{
+    color:blue
+
+  }
   .footer-bottom .fine{opacity:0.75;}
 
   /* ============ RESPONSIVE ============ */
@@ -1079,6 +1083,7 @@
     <div class="footer-bottom">
       <span>&copy; 2026 Mara Frontseat Tours. All rights reserved.</span>
       <span class="fine">Licensed tour operator &middot; Nairobi, Kenya</span>
+      <p>Made by <a href="https://lincorn.dpdns.org" target="_blank" rel="noopener">Lincoln Samuel</a></p>
     </div>
   </div>
 </footer>
@@ -1109,25 +1114,27 @@ bookingFormEl.addEventListener("submit", function(e) {
         bookingFormEl
     )
 
-    .then(function(){
+   .then(function(response) {
 
-        success.style.display = "block";
+    console.log("SUCCESS!", response);
 
-        bookingFormEl.reset();
+    success.style.display = "block";
 
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = "Send Booking Request";
+    bookingFormEl.reset();
 
-    })
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = "Send Booking Request";
 
-    .catch(function(error){
+})
 
-        console.log(error);
+.catch(function(error) {
 
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = "Send Booking Request";
+    console.error("FAILED!", error);
 
-    });
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = "Send Booking Request";
+
+});
 
 });
 
