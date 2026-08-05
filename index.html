@@ -33,6 +33,42 @@
     --max: 1180px;
   }
 
+  .fab-book{
+    position:fixed;
+    bottom:26px;
+    right:26px;
+    z-index:150;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--gold);
+    color:var(--forest-deep);
+    font-family:'Space Grotesk',sans-serif;
+    font-size:13.5px;
+    font-weight:600;
+    letter-spacing:0.02em;
+    padding:15px 22px;
+    border-radius:999px;
+    box-shadow:0 10px 30px rgba(10,46,28,0.35);
+    transition:background .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+  .fab-book:hover{
+    background:var(--gold-light);
+    transform:translateY(-2px);
+    box-shadow:0 14px 34px rgba(10,46,28,0.4);
+  }
+  .fab-book svg{width:17px;height:17px;flex-shrink:0;}
+
+  @media (max-width:760px){
+    .fab-book{
+      bottom:18px;
+      right:18px;
+      left:18px;
+      justify-content:center;
+      padding:15px 20px;
+    }
+  }
+
   *{margin:0;padding:0;box-sizing:border-box;}
 
   html{scroll-behavior:smooth;}
@@ -1235,6 +1271,11 @@ bookingFormEl.addEventListener("submit", function(e) {
       body.innerHTML = '<tr><td colspan="4" style="color:var(--ivory-dim);">Trips could not be loaded right now.</td></tr>';
     });
 </script>
+
+<a href="booking.html" class="fab-book" aria-label="Book a trip with us">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+  Book a Trip With Us
+</a>
 
 </body>
 </html>
