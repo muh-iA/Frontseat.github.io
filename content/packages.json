@@ -1,116 +1,129 @@
 {
   "items": [
     {
-      "category": "wildlife",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZxG3gKT5VNxw5caRZeJkm-D_dwcClWJKqoz6ubS3-T1bgBOYv-gEM4d4&s=10",
       "badge": "Most Booked",
+      "price": "",
       "duration": "3 Days / 2 Nights",
-      "guests": "2\u20136 Guests",
       "title": "Classic Maasai Mara Safari",
+      "priceNote": "per person",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZxG3gKT5VNxw5caRZeJkm-D_dwcClWJKqoz6ubS3-T1bgBOYv-gEM4d4&s=10",
+      "guests": "2–6 Guests",
+      "category": "wildlife",
       "highlights": [
         "Return transport from Nairobi",
         "Two full-day game drives",
         "Park entry fees included",
         "Camp accommodation & meals"
-      ],
-      "price": "",
-      "priceNote": "per person"
+      ]
     },
     {
-      "category": "wildlife",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2O-5j0cHm8JZJqR9eZl0avHYKRu8r6x7vnE02nl1Oyu_nDWchnPj6KBQ&s=10",
       "badge": "Popular",
+      "price": "",
       "duration": "3 Days / 2 Nights",
-      "guests": "2\u20136 Guests",
       "title": "Amboseli Elephant Safari",
+      "priceNote": "per person",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2O-5j0cHm8JZJqR9eZl0avHYKRu8r6x7vnE02nl1Oyu_nDWchnPj6KBQ&s=10",
+      "guests": "2–6 Guests",
+      "category": "wildlife",
       "highlights": [
         "Views of Mount Kilimanjaro",
         "Large elephant herd sightings",
         "Two game drives included",
         "Lodge accommodation & meals"
-      ],
-      "price": "",
-      "priceNote": "per person"
+      ]
     },
     {
-      "category": "wildlife",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR5n5_mqcrVWWRS81s0p8tk58-r5RerDuslow6SWOUV0szNalCsksA1OJN&s=10",
       "badge": "Off The Path",
+      "price": "",
       "duration": "3 Days / 2 Nights",
-      "guests": "2\u20136 Guests",
       "title": "Nairobi National Park Day Trip",
+      "priceNote": "per person",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR5n5_mqcrVWWRS81s0p8tk58-r5RerDuslow6SWOUV0szNalCsksA1OJN&s=10",
+      "guests": "2–6 Guests",
+      "category": "wildlife",
       "highlights": [
         "A national park in the city",
         "Two full-day game drives",
         "Camp accommodation & meals",
         "Park entry fees included"
-      ],
-      "price": "",
-      "priceNote": "per person"
+      ]
     },
     {
-      "category": "cultural",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSarP_DyfYnB7rqEuzgEgLVqp4p1yNe5HbP1oO5lMlN3QSA1AQXZ01vfWMo&s=10",
       "badge": "Immersive",
+      "price": "",
       "duration": "3 Days / 2 Nights",
-      "guests": "2\u20136 Guests",
       "title": "Maasai Cultural Immersion",
+      "priceNote": "per person",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSarP_DyfYnB7rqEuzgEgLVqp4p1yNe5HbP1oO5lMlN3QSA1AQXZ01vfWMo&s=10",
+      "guests": "2–6 Guests",
+      "category": "cultural",
       "highlights": [
         "Homestead visit & village walk",
         "Traditional craft demonstration",
         "One game drive included",
         "Camp accommodation & meals"
-      ],
-      "price": "",
-      "priceNote": "per person"
+      ]
     },
     {
-      "category": "cultural",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6EIPz2yOxzque6aEvBlPz0k-i-605UilclWKC29o2kuYBaU8LPP55ec4&s=10",
       "badge": "City",
+      "price": "",
       "duration": "1 Day",
-      "guests": "1\u20138 Guests",
       "title": "Nairobi Heritage & Culture Tour",
+      "priceNote": "per person",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6EIPz2yOxzque6aEvBlPz0k-i-605UilclWKC29o2kuYBaU8LPP55ec4&s=10",
+      "guests": "1–8 Guests",
+      "category": "cultural",
       "highlights": [
         "Museum & craft market visits",
         "Local lunch included",
         "Private vehicle & guide",
         "Hotel pick-up & drop-off"
-      ],
-      "price": "",
-      "priceNote": "per person"
+      ]
     },
     {
-      "category": "day-trips",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlhdIeYbVQlf_zj4yY4EQaBmuhy_xvIk8SiFPKgli8zEPVNcBsgicY7-Iu&s=10",
       "badge": "Convenient",
+      "price": "",
       "duration": "1 Day",
-      "guests": "1\u20136 Guests",
       "title": "Nairobi National Park Day Trip",
+      "priceNote": "per person",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlhdIeYbVQlf_zj4yY4EQaBmuhy_xvIk8SiFPKgli8zEPVNcBsgicY7-Iu&s=10",
+      "guests": "1–6 Guests",
+      "category": "day-trips",
       "highlights": [
         "Half-day game drive",
         "Park entry fees included",
         "Pick-up from Nairobi hotels",
         "Bottled water on board"
-      ],
-      "price": "",
-      "priceNote": "per person"
+      ]
     },
     {
-      "category": "day-trips",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAY8POZ-lWjo_PVw4d63QNNL4YwJOARFz_kmF3E3HtFsUAZu8LJr9zqBQ&s=10",
       "badge": "Full Day",
+      "price": "",
       "duration": "1 Day",
-      "guests": "1\u20136 Guests",
       "title": "Amboseli National Park Day Trip",
+      "priceNote": "per person",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAY8POZ-lWjo_PVw4d63QNNL4YwJOARFz_kmF3E3HtFsUAZu8LJr9zqBQ&s=10",
+      "guests": "1–6 Guests",
+      "category": "day-trips",
       "highlights": [
         "Flamingo & rhino sanctuary viewing",
         "Return transport from Nairobi",
         "Packed lunch included",
         "Park entry fees included"
-      ],
-      "price": "",
-      "priceNote": "per person"
+      ]
+    },
+    {
+      "badge": " 02 Nights / 03 Days — The Great Mara Discovery",
+      "price": "850USD",
+      "duration": "2-3 Days",
+      "title": "The Great Mara Discovery",
+      "priceNote": "Per Person",
+      "image": "images/uploads/hero-mara-ci7xey6o.jpg",
+      "guests": "10",
+      "category": "wildlife",
+      "highlights": [
+        "Journey into Kenya's most celebrated wildlife sanctuary where endless golden plains meet dramatic riverbanks. Witness prides of lions stalking through tall grass, cheetahs sprinting across open savanna, and massive herds of wildebeest grazing beneath African skies. WHAT'S INCLUDED Park entry fees ✓ ✓ ✓ ✓ ✓ ✓ ✓ ✓ Accommodation as per itinerary Meals as per itinerary (Full Board) Use of 4x4 Land Cruiser with pop-up roof Services of English-speaking professional driver-guide Game drives as per itinerary Complimentary bottled water in vehicle Government taxes and levies Day 01: Arrival & Masai Mara Pick up from your Nairobi hotel at 7:00 AM. Drive through the Great Rift Valley escarpment with a photo stop at the viewpoint. Continue to Masai Mara National Reserve. Check in at lodge/camp. Lunch. Afternoon game drive exploring the Mara plains searching for Big Five. Meals: Lunch & Dinner Day 02: Masai Mara Discovery Early morning game drive at 6:30 AM when predators are most active. Search for lion prides, cheetahs on termite mounds, and leopards in sausage trees. Return for breakfast. Optional Maasai village visit to learn warrior traditions and beadwork. Lunch at lodge. Afternoon game drive in the Mara Triangle sector. Meals: Breakfast, Lunch & Dinner Day 03: Departure Optional sunrise game drive. Breakfast and check out. Scenic drive back to Nairobi via Rift Valley viewpoint. Arrive Nairobi by late afternoon. Drop off at hotel or JKIA. Meals: Breakfast Max Guests: 10 Min Age: 5+ Location: Kenya Languages: English, Swahili Tour Type: Wildlife Safari"
+      ]
     }
   ]
 }
