@@ -802,16 +802,17 @@
       ]
     },
     {
-      "priceNote": "Per Person",
-      "category": "day-trips",
       "badge": "02 Nights / 03 Days — The Samburu Special Five Safari",
+      "price": "$1300",
+      "duration": "3 Days",
       "title": "The Samburu Special Five Safari",
+      "priceNote": "Per Person",
+      "image": "images/uploads/samburu-national-park.jpg",
+      "guests": "10 Guests",
+      "category": "day-trips",
       "highlights": [
         "Northern Kenya's arid beauty harbors wildlife found nowhere else. Track the reticulated giraffe, Grevy's zebra, long-necked gerenuk, Beisa oryx, and Somali ostrich. WHAT'S INCLUDED  DAY-BY-DAY ITINERARY Day 01: Arrival & Samburu & Northern Kenya Depart Nairobi north through the central highlands. Cross the equator at Nanyuki marker. Continue to Samburu National Reserve. Check in at riverside lodge along palm-fringed Ewaso Nyiro River. Afternoon game drive for the Samburu Special Five. Meals: Lunch & Dinner Day 02: Samburu & Northern Kenya Discovery Early drive along the Ewaso Nyiro where elephants wade and leopards hunt in riverine forest. Track reticulated giraffes and long-necked gerenuk. Visit a Samburu manyatta for warrior dances and beadwork. Lunch. Afternoon in Buffalo Springs Reserve across the river. Meals: Breakfast, Lunch & Dinner Day 03: Departure Final Ewaso Nyiro sunrise. Breakfast and check out. Drive south to Nairobi via Nanyuki with lunch stop. Arrive late afternoon. Transfer to hotel or JKIA. Meals: Breakfast Max Guests: 10 Min Age: 5+ Location: Kenya Languages: English, Swahili Tour Type: Wildlife Safari ✓ Park entry fees ✓ Accommodation as per itinerary ✓ Meals as per itinerary (Full Board) ✓ Use of 4x4 Land Cruiser with pop-up roof ✓ Services of English-speaking professional driver-guide ✓ Game drives as per itinerary ✓ Complimentary bottled water in vehicle ✓ Government taxes and levies"
-      ],
-      "price": "$1300",
-      "guests": "10 Guests",
-      "duration": "3 Days"
+      ]
     },
     {
       "priceNote": "per person"
